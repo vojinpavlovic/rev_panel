@@ -1,11 +1,13 @@
+import { UserEntity } from '../../Domain/Entities/UserEntity';
 import { IUserRepository } from '../../Domain/Interfaces/Repositories/IUserRepository'
+import { execute } from '../Databases/MySQL';
 
-class UserRepository implements IUserRepository {
-    findUser(id: string) {
-        throw new Error('Method not implemented.');
+export class UserRepository implements IUserRepository {
+    async findUser(id: string) {
+        throw new Error('Not implemented');
     }
 
     deleteUser(id: string) {
-        throw new Error('Method not implemented.');
+        throw new Error('Not implemented');
     }
 }

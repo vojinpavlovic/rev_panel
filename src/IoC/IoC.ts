@@ -5,6 +5,9 @@ import { AuthService } from "../Application/Services/AuthService";
 
 const container = new Container();
 
+// Auth Service
 container.bind<AuthController>("AuthController").to(AuthController);
 container.bind<IAuthService>("IAuthService").to(AuthService);
+
+
 export { container };

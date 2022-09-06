@@ -3,7 +3,7 @@ import { IAuthService } from "../Interfaces/IAuthService";
 
 @injectable()
 export class AuthService implements IAuthService {
-    public authenticateUser() {
+    public authenticateUser = async() => {
         throw new Error("Not implemented");
     }
 

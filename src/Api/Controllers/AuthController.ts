@@ -16,6 +16,7 @@ export class AuthController extends BaseController {
     }
     
     public login = (req: Request, res: Response) => {
+        this.authService.authenticateUser()
         this.ok(res, "Not implemented yet")
     }
 

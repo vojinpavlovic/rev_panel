@@ -5,12 +5,15 @@ let pool: Pool
 export const init = () => {
     try {
         pool = createPool({
-            connectionLimit: 100 || 100,
-            host: 'localhost' || 'localhost',
-            user: 'root' || 'root',
-            password: 'password' || 'password',
-            database: 'revolucija' || 'revolucija'
+            connectionLimit: 100,
+            host: '162.19.139.137',
+            user: 'u32652_X7bfuysnqR',
+            port: 3306,
+            password: 'pjX5d18wj8AI40QTdRo41Kmd',
+            database: 's32652_baza'
         });
+
+        console.log(['MySQL has successfully initialized'])
     } catch(error) {
         throw new Error(`Failed to initialize pool ${error}`)
     }
