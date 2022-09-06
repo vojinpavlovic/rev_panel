@@ -16,11 +16,11 @@ export class AuthController extends BaseController {
     }
     
     public login = (req: Request, res: Response) => {
-        this.authService.authenticateUser();
-        super.ok(res, "Not implemented yet")
+        this.ok(res, "Not implemented yet")
     }
 
     public register = (req: Request, res: Response) => {
-        super.created(res, "Not implemented yet")
+        
+        this.created(res, "Not implemented yet")
     }
 }   

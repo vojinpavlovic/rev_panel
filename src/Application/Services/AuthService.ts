@@ -4,7 +4,6 @@ import { IAuthService } from "../Interfaces/IAuthService";
 @injectable()
 export class AuthService implements IAuthService {
     public authenticateUser() {
-        console.log("Radi")
         throw new Error("Not implemented");
     }
 
