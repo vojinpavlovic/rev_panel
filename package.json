@@ -14,5 +14,10 @@
     "@types/mysql": "^2.15.21",
     "express": "^4.18.1",
     "mysql": "^2.18.1"
+  },
+  "dependencies": {
+    "inversify": "^6.0.1",
+    "inversify-express-utils": "^6.4.3",
+    "reflect-metadata": "^0.1.13"
   }
 }
