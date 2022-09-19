@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy } from 'passport-steam';
-import { steamOAuthConfig } from './config/SteamOAuth';
+import { steamOAuthConfig } from '../Configuration/SteamOAuthConfig';
 
 const strategyOptions = steamOAuthConfig;
 
