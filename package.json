@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/server.ts",
     "test": "jest",
     "test:watch": "jest --watchAll --verbose"
   },
@@ -21,9 +21,14 @@
     "ts-jest": "^29.0.1"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
+    "express-session": "^1.17.3",
     "inversify": "^6.0.1",
     "inversify-express-utils": "^6.4.3",
+    "passport": "^0.6.0",
+    "passport-steam": "^1.0.17",
     "reflect-metadata": "^0.1.13"
   }
 }
