@@ -6,7 +6,7 @@ import RedisService from './Infrastructure/Services/RedisService';
 import { Http } from "./Web/http";
 
 
-RedisService.setup()
+new RedisService().setup()
 new Http().setup();
 
 
