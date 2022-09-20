@@ -9,7 +9,7 @@ import cors from 'cors';
 import { sessionConfig } from "./config/Session";
 import { SteamOAuth } from "./Infrastructure/Services/SteamOAuth";
 
-import router from '../src/App/Router'
+import router from './Web/Router'
 
 const app = express();
 const port = parseInt(<string>process.env.PORT ?? 3000);
