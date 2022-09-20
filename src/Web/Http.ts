@@ -2,11 +2,8 @@ import express from "express";
 import session from "express-session";
 import cors from 'cors';
 import router from '../Web/Router'
+import AddAuth from "../Application/Middlewares/AddAuth";
 import { sessionConfig } from "../config/Session";
-
-// Leaking dependencies from infra -> web
-import { SteamOAuth } from "../Infrastructure/Services/SteamAuth";
-const steamOAuth = new SteamOAuth().setup();
 
 export class Http {
     private app: express.Application = express();
@@ -17,8 +14,7 @@ export class Http {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(session(sessionConfig));
-        this.app.use(steamOAuth.initialize());
-        this.app.use(steamOAuth.session());
+        AddAuth(this.app);
     }
 
     public setup(): void {
