@@ -1,19 +1,17 @@
 import { SteamOAuth } from '../../Infrastructure/Services/SteamOAuth';
 import { AuthController } from '../Controllers/AuthController';
-const steamOAuth = new SteamOAuth()
+import { isAuth } from '../Middlewares/isAuth';
+import { notAuth } from '../Middlewares/notAuth';
+
+const steamAuth = new SteamOAuth().authenticate
 
 const authController: AuthController = new AuthController();
 
 export default(app) => {
-    app.get('/', (req, res) => {
+    app.get('/', isAuth, (req, res) => {
         res.send(req.user);
     })
 
-    app.get('/api/auth/steam', steamOAuth.authenticate(), function (req, res) {
-        res.redirect('/')
-    });
-    
-    app.get('/api/auth/steam/return', steamOAuth.authenticate(), function (req, res) {
-        res.redirect('/')
-    });
+    app.get('/api/auth/steam', notAuth, steamAuth(), authController.login);
+    app.get('/api/auth/steam/return', notAuth, steamAuth(), authController.loginCb);
 }

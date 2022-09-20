@@ -1,7 +1,6 @@
 {
   "name": "rev_panel",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
@@ -30,5 +29,14 @@
     "passport": "^0.6.0",
     "passport-steam": "^1.0.17",
     "reflect-metadata": "^0.1.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vojinpavlovic/rev_panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vojinpavlovic/rev_panel/issues"
+  },
+  "homepage": "https://github.com/vojinpavlovic/rev_panel#readme",
+  "description": ""
 }

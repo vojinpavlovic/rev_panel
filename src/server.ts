@@ -25,4 +25,4 @@ app.use(steamOAuth.session());
 
 router(app);
 
-app.listen(port, () => console.log([`Listening on http://localhost:${port}`]));
+app.listen(port, () => console.log([`🚀 Listening on http://localhost:${port}`]));
