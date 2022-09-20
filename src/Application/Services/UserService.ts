@@ -1,28 +1,21 @@
 import { inject, injectable } from "inversify";
 import { IUserService } from "../../Domain/Interfaces/IUserService";
-import { IMysqlService } from "../../Domain/Interfaces/IMysqlService";
 import DependencyTypes from "../../Common/DependencyTypes";
+import IUserRepository from "../../Domain/Interfaces/IUserRepository";
 import UserEntity from "../../Domain/Entities/UserEntity";
 
 @injectable()
 export class UserService implements IUserService {
-    private _mysqlService: IMysqlService;
+    private _userRepository: IUserRepository;
 
     constructor(
-        @inject(DependencyTypes.IMysqlService) mysqlService: IMysqlService
+        @inject(DependencyTypes.IUserRepository) userRepository: IUserRepository
     ) {
-        this._mysqlService = mysqlService
+        this._userRepository = userRepository
     }
-    async findUser(userId: string): Promise<any> {
-        const fields: string = "accounts, `group`, inventory, job, job_grade, firstname, lastname, sex, height, phone_number, status, vreme, health, pancir, credits";
-        const [rows] = await this._mysqlService.execute<UserEntity[]>(`SELECT ${fields} FROM users WHERE identifier = ?`, [userId]);
-
-        if (!rows) {
-            return null;
-        }
-
-        const entity: UserEntity = new UserEntity(rows);
-        console.log(entity);
+    
+    async getPlayer(playerId: string): Promise<UserEntity | undefined> {
+        return await this._userRepository.findById(playerId);
     }
 }
 

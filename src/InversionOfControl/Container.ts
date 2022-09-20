@@ -12,11 +12,15 @@ import RedisService from '../Infrastructure/Services/RedisService';
 import { IMysqlService } from '../Domain/Interfaces/IMysqlService';
 import MysqlService from '../Infrastructure/Services/MysqlService';
 
+import IUserRepository from '../Domain/Interfaces/IUserRepository';
+import UserRepository from '../Infrastructure/Repositories/UserRepository';
+
 const container = new Container();
 
 container.bind<IUserService>(DependencyTypes.IUserService).to(UserService)
 container.bind<AuthController>(DependencyTypes.AuthController).to(AuthController);
 container.bind<IRedisService>(DependencyTypes.IRedisService).to(RedisService);
 container.bind<IMysqlService>(DependencyTypes.IMysqlService).to(MysqlService);
+container.bind<IUserRepository>(DependencyTypes.IUserRepository).to(UserRepository)
 
 export default container;
