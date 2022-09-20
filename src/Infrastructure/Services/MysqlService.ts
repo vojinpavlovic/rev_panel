@@ -1,8 +1,10 @@
+import { injectable } from 'inversify'
 import { Pool, createPool, MysqlError } from 'mysql'
 import { IMysqlService } from '../../Domain/Interfaces/IMysqlService'
 
 let pool: Pool
 
+@injectable()
 export default class MysqlService implements IMysqlService{
     private checkConn = () => {
         if (!pool) {
