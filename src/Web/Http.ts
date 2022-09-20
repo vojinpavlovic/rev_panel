@@ -1,9 +1,8 @@
 import express from "express";
-import session from "express-session";
 import cors from 'cors';
 import router from '../Web/Router'
 import AddAuth from "../Application/Middlewares/AddAuth";
-import { sessionConfig } from "../config/Session";
+import AddSession from "../Application/Session/AddSession";
 
 export class Http {
     private app: express.Application = express();
@@ -13,7 +12,7 @@ export class Http {
         this.app.use(cors())
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(session(sessionConfig));
+        AddSession(this.app);
         AddAuth(this.app);
     }
 
