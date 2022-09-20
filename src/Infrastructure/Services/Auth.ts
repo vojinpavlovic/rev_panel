@@ -16,7 +16,7 @@ export class Auth {
             done(null, user);
         });
            
-        this._passport.deserializeUser((user: any, done: (arg0: null, arg1: any) => void) => {
+        this._passport.deserializeUser((user: any, done) => {
             done(null, user);
         });
 

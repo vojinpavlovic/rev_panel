@@ -1,16 +1,18 @@
-import { AuthController } from '../Controllers/AuthController';
-import { isAuth } from '../Middlewares/isAuth';
+import container from '../../InversionOfControl/Container';
+
 import { notAuth } from '../Middlewares/notAuth';
-const authController: AuthController = new AuthController();
+import { isAuth } from '../Middlewares/isAuth';
+import { AuthController } from '../Controllers/AuthController';
 
 import AuthMiddleware from '../../Application/Middlewares/AuthMiddleware';
+import DependencyTypes from '../../Common/DependencyTypes';
 
 
 export default(app) => {
-    app.get('/', isAuth, (req, res) => {
-        res.send(req.user);
-    })
+    // Controllers 
+    const authController: AuthController = container.get(DependencyTypes.AuthController);
 
+    // Endpoints    
     app.get('/api/auth/steam', notAuth, AuthMiddleware(), authController.login);
-    app.get('/api/auth/steam/return', notAuth, AuthMiddleware(), authController.loginCb);
+    app.get('/api/auth/steam/return', notAuth, AuthMiddleware(), authController.loginCallback);
 }
