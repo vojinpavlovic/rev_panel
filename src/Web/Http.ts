@@ -4,7 +4,8 @@ import cors from 'cors';
 import router from '../Web/Router'
 import { sessionConfig } from "../config/Session";
 
-import { SteamOAuth } from "../Infrastructure/Services/SteamOAuth";
+// Leaking dependencies from infra -> web
+import { SteamOAuth } from "../Infrastructure/Services/SteamAuth";
 const steamOAuth = new SteamOAuth().setup();
 
 export class Http {
