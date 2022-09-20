@@ -1,3 +1,5 @@
+import UserEntity from "../Entities/UserEntity";
+
 export interface IUserService {
-    findUser(userId: string): Promise<void>;
+    getPlayer(playerId: string): Promise<UserEntity | undefined>;
 }

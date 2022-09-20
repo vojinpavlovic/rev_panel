@@ -3,4 +3,5 @@ export default {
     IUserService: "IUserService",
     IRedisService: "IRedisService",
     IMysqlService: "IMysqlService",
+    IUserRepository: "IUserRepository",
 }

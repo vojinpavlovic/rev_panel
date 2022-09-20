@@ -32,9 +32,13 @@ export class AuthController extends BaseController {
         Note: user data is declared in session. There is not additional logic
         required after. 
     */
-    public loginCallback = async (req: Request, res: Response) => {
-        const user = await this._userService.findUser("1100001028b911a")
-        console.log(user)
-        res.send(new BaseResponse(true, "Successfully logged in."));
+    public loginCallback = async (req: Request | any, res: Response) => {
+        const user = await this._userService.getPlayer(req.user.steamHexId)
+        
+        if (user !== undefined) {
+            return res.send(new BaseResponse(true, "Successfully logged in.", user));
+        }
+
+        return res.send(new BaseResponse(true, "Successfully logged in"))
     }
 }   
