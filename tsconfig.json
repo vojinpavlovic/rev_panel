@@ -10,7 +10,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "noImplicitAny": false,
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "jest", "node"],
   },
   "lib": ["es6"]
 }
