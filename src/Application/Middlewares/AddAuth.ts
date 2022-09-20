@@ -1,4 +1,4 @@
-import auth from "../../Infrastructure/Services/Auth";
+import auth from "../../Infrastructure/Services/AuthService";
 
 export default app => {
     const passport = auth.setup();
