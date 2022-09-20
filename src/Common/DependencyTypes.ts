@@ -1,4 +1,5 @@
 export default {
     AuthController: "AuthController",
-    IUserService: "IUserService"
+    IUserService: "IUserService",
+    IRedisService: "IRedisService"
 }

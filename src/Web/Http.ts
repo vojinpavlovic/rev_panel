@@ -8,7 +8,7 @@ export class Http {
     private app: express.Application = express();
     private port: number = parseInt(<string>process.env.PORT ?? 3000);
 
-    public registerMiddlewares(): void {
+    private registerMiddlewares(): void {
         this.app.use(cors())
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));

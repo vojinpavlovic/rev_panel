@@ -2,35 +2,38 @@ import { injectable } from "inversify";
 import { createClient } from "redis";
 import connectRedis from 'connect-redis';
 
-@injectable()
-class RedisService {
-    private _client;
+import { IRedisService } from "../../Domain/Interfaces/IRedisService";
 
-    setup = (): ReturnType<typeof this._client>=> {
-        if (this._client) {
-            return this._client;
+var client;
+
+@injectable()
+class RedisService implements IRedisService {
+
+    setup = (): ReturnType<typeof client> => {
+        if (client) {
+            return client;
         }
 
-        this._client = createClient({
-            url: 'redis://localhost:6379',
+        client = createClient({
+            url: `redis://${process.env.REDIS_HOST ?? "localhost"}:${parseInt(<string>process.env.REDIS_PORT ?? 6379)}`,
             legacyMode: true,
         });
 
-        this._client.connect();
+        client.connect();
 
-        this._client.on('error', err => {
+        client.on('error', err => {
             console.error(`⚠ Redis Service could not connect to server: ${err.message} ⚠`);
             process.exit(1);
         })
 
-        this._client.on('ready', () => console.log(['🗃  Redis connection established']))
+        client.on('ready', () => console.log(['🗃  Redis connection established']))
 
-        return this._client;
+        return client;
     }
 
-    get = (key: string) => {
+    get = async (key: string): Promise<string | unknown> => {
         const getRes = new Promise((resolve, reject) => {
-            this._client.get(key, (err, reply) => {
+            client.get(key, (err, reply) => {
                 if (err) return reject(err)
     
                 return resolve(reply)
@@ -44,9 +47,9 @@ class RedisService {
             });
     }
 
-    set<T>(key: string, value: T) {
+    set = async <T>(key: string, value: T): Promise<string | unknown> => {
         const setRes = new Promise<T>((resolve, reject) => {
-            this._client.set(key, value, (err, reply) => {
+            client.set(key, value, (err, reply) => {
                 if (err) return reject(err)
     
                 return resolve(reply)
@@ -60,14 +63,14 @@ class RedisService {
             })
     }
 
-    del = async (key: string) => await this._client.del(key); 
+    del = async (key: string): Promise<string> => await client.del(key); 
 
-    flushAll = async () => await this._client.flushAll();
+    flushAll = async (): Promise<string> => await client.flushAll();
 
     getStore = (obj): connectRedis.RedisStore => {
         const store = connectRedis(obj)
-        return new store({ client: this._client })
+        return new store({ client: client })
     }
 }
 
-export default new RedisService();
+export default RedisService;
