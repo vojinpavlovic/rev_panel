@@ -20,9 +20,7 @@ class UserRepository implements IUserRepository {
         throw new Error("Method not implemented.");
     }
 
-    async findById(id: string): Promise<UserEntity | undefined> {
-        const fields: string = "accounts, `group`, inventory, job, job_grade, firstname, lastname, sex, height, phone_number, status, vreme, health, pancir, credits";
-        
+    async findById(id: string): Promise<UserEntity | undefined> {        
         const [rows] = await this._mysqlService.execute<UserEntity[]>(UserQueries.findById, [id]);
 
         if (!rows) {
