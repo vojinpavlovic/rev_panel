@@ -8,7 +8,7 @@ import UserEntity from "../../Domain/Entities/UserEntity";
 export class UserService implements IUserService {
     private _userRepository: IUserRepository;
 
-    constructor(
+    constructor (
         @inject(DependencyTypes.IUserRepository) userRepository: IUserRepository
     ) {
         this._userRepository = userRepository

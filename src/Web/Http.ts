@@ -1,11 +1,11 @@
-import express from "express";
+import express, { Application } from "express";
 import cors from 'cors';
 import router from '../Web/Router'
 import AddAuth from "../Application/Middlewares/AddAuth";
 import AddSession from "../Application/Session/AddSession";
 
 export class Http {
-    private app: express.Application = express();
+    private app: Application = express();
     private port: number = parseInt(<string>process.env.PORT ?? 3000);
 
     private registerMiddlewares(): void {
