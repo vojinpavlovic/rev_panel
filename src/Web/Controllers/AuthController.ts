@@ -18,19 +18,22 @@ export class AuthController extends BaseController {
         this._userService = userService
     }
 
+    public test = async (req: Request, res: Response) => {
+        const user = await this._userService.getPlayer("1100001057a87a3");
+        res.send(user)
+    }
+
     /**
      * @method login
         Login method is empty since it is not invoked.
         It only just exists for endpoint registration purposes.
     */
     public login = (req: Request, res: Response) => res.end()
-
+    
     /**
      * @method loginCallback
         The loginCallback method is called when the user is authenticated
         by third party authentication such as Steam-Passport strategy.
-        Note: user data is declared in session. There is not additional logic
-        required after. 
     */
     public loginCallback = async (req: Request | any, res: Response) => {
         const user = await this._userService.getPlayer(req.user.steamHexId)
