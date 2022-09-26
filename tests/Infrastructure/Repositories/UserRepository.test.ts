@@ -26,6 +26,11 @@ describe('User Repository', () => {
         expect(user).toHaveProperty("health", 200);
         expect(user).toHaveProperty("pancir", 0);
         expect(user).toHaveProperty("group", "user");
+        expect(user).toHaveProperty("accounts", {
+            bank: 0,
+            money: 0,
+            blackMoney: 0
+        });
     })
 
     test("Should return fresh character with 2 inventory items", async () => {
@@ -47,6 +52,11 @@ describe('User Repository', () => {
         expect(user).toHaveProperty("health", 200);
         expect(user).toHaveProperty("pancir", 0);
         expect(user).toHaveProperty("group", "user");
+        expect(user).toHaveProperty("accounts", {
+            bank: -1000,
+            money: 1389,
+            blackMoney: -559
+        });
     })
 
     test("Should return character with vehicle", async () => {
@@ -78,5 +88,10 @@ describe('User Repository', () => {
         expect(user).toHaveProperty("health", 200);
         expect(user).toHaveProperty("pancir", 0);
         expect(user).toHaveProperty("group", "user");
+        expect(user).toHaveProperty("accounts", {
+            bank: 0,
+            money: 0,
+            blackMoney: 0
+        });
     })
 })

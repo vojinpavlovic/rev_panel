@@ -29,7 +29,12 @@ class MockUserRepository implements IUserRepository {
             user_inventory: JSON.stringify([
                 {"slot":1,"count":9,"name":"destilovanavoda"},
                 {"slot":2,"count":2,"name":"coke_figureempty"}
-            ])
+            ]),
+            user_accounts: JSON.stringify({
+                bank: -1000,
+                money: 1389,
+                black_money: -559
+            })
         },
         // Character with vehicles
         {
