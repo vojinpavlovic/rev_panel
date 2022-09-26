@@ -1,4 +1,4 @@
-import InventoryItem from "../Entities/InventoryItem";
+import InventoryItem from "../Entities/ItemEntity";
 
 export default (result: any): Array<InventoryItem> => {
     if (!result) {
