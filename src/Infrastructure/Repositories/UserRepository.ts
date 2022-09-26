@@ -23,7 +23,7 @@ class UserRepository implements IUserRepository {
     async findById(id: string): Promise<UserEntity | undefined> {        
         const rows: any = await this._mysqlService.execute<UserEntity[]>(UserQueries.findById, [id]);
                 
-        if (!rows) {
+        if (rows.length <= 0) {
             return undefined;
         }
 
