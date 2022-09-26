@@ -1,6 +1,9 @@
+import "reflect-metadata";
+import { injectable } from "inversify";
 import UserEntity from "../../../../src/Domain/Entities/UserEntity";
 import IUserRepository from "../../../../src/Domain/Interfaces/IUserRepository";
 
+@injectable()
 class MockUserRepository implements IUserRepository {
     private mockData: any = [
         // If character is not created before.
