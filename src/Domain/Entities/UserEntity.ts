@@ -1,5 +1,7 @@
 import InventoryItem from "./InventoryItem";
 import VehicleEntity from "./VehicleEntity";
+import VehiclesMapper from "../Mapper/VehiclesMapper";
+import InventoryMapper from "../Mapper/InventoryMapper";
 
 class UserEntity {
     public firstname: string | undefined;
@@ -19,42 +21,8 @@ class UserEntity {
         this.health = result[0].user_health ?? 200;
         this.pancir = result[0].user_pancir ?? 0;
         this.group = result[0].user_group ?? "user";
-        this.inventory = this.createInventory(result[0].user_inventory);
-        this.vehicles = this.createOwnedVehicles(result)
-    }
-
-    private createInventory(inventory: any): Array<InventoryItem> {
-        if (!inventory) {
-            return [];
-        } 
-
-        inventory = JSON.parse(inventory)
-
-        if (inventory.length <= 0) {
-            return [];
-        }
-
-        const inventoryArray: Array<InventoryItem> = [];
-        
-        for (const item of inventory) {
-            inventoryArray.push(new InventoryItem(item));
-        }
-
-        return inventoryArray;
-    }
-
-    private createOwnedVehicles(result: any): Array<VehicleEntity>{
-        if (!result[0].vehicle_plate) {
-            return [];
-        }
-        
-        const vehicleArray: Array<VehicleEntity> = []
-
-        for (const res of result) {
-            vehicleArray.push(new VehicleEntity(res))
-        }
-
-        return vehicleArray;
+        this.inventory = result[0].user_inventory ? InventoryMapper(result[0].user_inventory) : [];
+        this.vehicles = result[0].vehicle_plate ? VehiclesMapper(result) : [];
     }
 }
 
