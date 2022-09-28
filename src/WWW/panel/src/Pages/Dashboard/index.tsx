@@ -24,6 +24,7 @@ const dashboard = () => {
                         <TrailerVideo/>
                     </div>
                     <div className={Style.UpdateLogRow}>
+                        <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
                         { updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
                     </div>
                 </div>

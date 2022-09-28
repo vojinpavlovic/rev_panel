@@ -1,6 +1,6 @@
 import * as Style from './style';
 import { CardType } from '../../Types/UpdateLogTypes';
-import EyeIcon from '../../Static/Images/eye-icon.png'
+import EyeSVG from '../../Components/SVG/EyeSVG';
 
 const UpdateLogCard = ({date, title}: CardType) => (
     <div className={Style.Card}>
@@ -8,9 +8,9 @@ const UpdateLogCard = ({date, title}: CardType) => (
             <p className={Style.DateText}>{date.toLocaleDateString("en-US")}</p>
             <h1 className={Style.TitleText}>{title}</h1>
         </div>
-        
+
         <button className={Style.ViewButton}>
-            <img  src={EyeIcon} alt="view update log"/>
+            <EyeSVG/>
         </button>
     </div>
 )

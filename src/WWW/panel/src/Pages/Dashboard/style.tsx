@@ -12,7 +12,7 @@ export const Wrapper = `
 export const ContentBody = `
     text-white
     max-w-content-body
-    w-11/12
+    w-10/12
     flex
 `
 
@@ -22,6 +22,7 @@ export const LeftContentBody = `
     sticky
     top-0
 `
+
 export const RightContentBody = `
     w-8/12
     h-p-96
@@ -40,7 +41,15 @@ export const TrailerRow = `
     text-gray
     font-bold
 `
+
 export const UpdateLogRow = `
     w-12/12
     mx-5
+`
+
+export const UpdateLogRowTitle = `
+    my-5
+    font-bold
+    text-xl
+    text-gray
 `

@@ -6,6 +6,10 @@ export const Card = `
     bg-dark-transparent
     flex
     items-center
+    hover:bg-red-600
+    hover:cursor-pointer
+    hover:shadow-xl
+    duration-200
 `
 
 export const DateText = `
@@ -23,4 +27,5 @@ export const TitleText = `
 export const ViewButton = `
     w-1/12
     ml-auto
+    mx-3
 `
