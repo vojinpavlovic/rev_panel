@@ -2,7 +2,7 @@ export const Wrapper = `
     w-full
     min-h-screen
     bg-dark
-    bg-car
+    bg-dashboard-bg
     bg-fixed
     flex
     justify-center
@@ -29,6 +29,14 @@ export const RightContentBody = `
 
 export const MenuRow = `
     w-12/12
-    py-10
-    px-5
+    my-10
+    mx-5
+`
+
+export const TrailerRow = `
+    w-12/12
+    mx-5
+    text-md
+    text-gray
+    font-bold
 `

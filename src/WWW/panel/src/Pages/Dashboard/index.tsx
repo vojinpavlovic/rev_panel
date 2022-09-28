@@ -1,6 +1,7 @@
 import * as Style from './style'
 
 import Logo from '../../Components/Logo'
+import TrailerVideo from '../../Components/TrailerVideo'
 
 const dashboard = () => {
     return (
@@ -9,6 +10,10 @@ const dashboard = () => {
                 <div className={Style.LeftContentBody}>
                     <div className={Style.MenuRow}>
                         <Logo/>
+                    </div>
+                    <div className={Style.TrailerRow}>
+                        <p>Revolucija Roleplay Sezona 3 Trailer</p>
+                        <TrailerVideo/>
                     </div>
                 </div>
                 {/*
@@ -21,7 +26,5 @@ const dashboard = () => {
     )
 }
 
-
-    
 
 export default dashboard;

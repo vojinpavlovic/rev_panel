@@ -10,9 +10,11 @@ module.exports = {
     extend: {
       colors: {
         dark: "#101010",
+        gray: "#a3a3a3"
       },
       backgroundImage: {
-        "car": `url(/public/images/bg.png)`
+        "dashboard-bg": `url(/public/images/bg.png)`,
+        "trailer-thumbnail": `url(/public/images/video-thumbnail.png)`
       }
     },
   },
