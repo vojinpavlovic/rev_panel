@@ -1,6 +1,6 @@
 const EyeSVG = () => (
   <svg
-    className="fill-gray hover:fill-black ease-in duration-200"
+    className="fill-gray hover:fill-white ease-in duration-200 hover:motion-safe:animate-spin"
     width="40"
     height="40"
     viewBox="0 0 50 50"

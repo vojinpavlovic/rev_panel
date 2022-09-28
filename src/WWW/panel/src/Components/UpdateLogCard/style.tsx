@@ -6,7 +6,7 @@ export const Card = `
     bg-dark-transparent
     flex
     items-center
-    hover:bg-red-600
+    hover:bg-red-transparent
     hover:cursor-pointer
     hover:shadow-xl
     duration-200
