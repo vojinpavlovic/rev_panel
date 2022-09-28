@@ -40,3 +40,7 @@ export const TrailerRow = `
     text-gray
     font-bold
 `
+export const UpdateLogRow = `
+    w-12/12
+    mx-5
+`
