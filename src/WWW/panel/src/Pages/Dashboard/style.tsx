@@ -17,10 +17,14 @@ export const ContentBody = `
 `
 
 export const LeftContentBody = `
-    w-4/12
+    w-screen
+    flex
+    flex-col
     h-screen
-    sticky
     top-0
+
+    2xl:w-4/12
+    2xl:sticky
 `
 
 export const RightContentBody = `
@@ -37,14 +41,21 @@ export const MenuRow = `
 export const TrailerRow = `
     w-12/12
     mx-5
-    text-md
+    text-center
+    text-xl
     text-gray
     font-bold
+
+    2xl:text-center
+    2xl:text-md
 `
 
 export const UpdateLogRow = `
+    hidden
     w-12/12
     mx-5
+
+    2xl:block
 `
 
 export const UpdateLogRowTitle = `

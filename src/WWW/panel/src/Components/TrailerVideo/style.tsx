@@ -4,10 +4,27 @@ export const TrailerVideo = `
     bg-blue-500
     bg-trailer-thumbnail
     bg-cover
-    h-44
+    bg-center
+    h-60
     rounded-md
     shadow-lg
     flex
     justify-center
     items-center
+
+    2xl:h-44
+`
+
+export const VideoShow = `
+    bg-black
+    w-screen
+    h-screen
+    fixed
+    top-0
+    left-0
+    opacity-70
+    flex
+    justify-center
+    items-center
+    z-50
 `

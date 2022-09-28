@@ -10,6 +10,7 @@ export const Card = `
     hover:cursor-pointer
     hover:shadow-xl
     duration-200
+    -z-50
 `
 
 export const DateText = `
