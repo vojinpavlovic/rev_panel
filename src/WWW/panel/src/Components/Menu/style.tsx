@@ -4,6 +4,7 @@ export const HamburgerButton = `
     gap-2
     justify-center
     group
+    z-50
 `
 
 export const HamburgerButtonSpan = `
@@ -20,14 +21,11 @@ export const HamburgerButtonSpanNormal = "w-6"
 
 export const Menu = `
     fixed
-    z-50
     left-0
-    top-0
+    top-0 
     w-full
-    drop-shadow-2xl
     bg-dark
-    transition-height
-    duration-200
+    z-40
 `
 
 export const MenuContent = `
