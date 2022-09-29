@@ -1,5 +1,5 @@
 export const Wrapper = `
-    my-3
+    my-8
     relative
     h-12
     flex
@@ -16,7 +16,6 @@ export const FillLine = `
     h-2
     bg-white
     transition-all
-    transition 
     duration-300
     ease-in
 `
@@ -35,14 +34,13 @@ export const Icon = `
     translate-y-1
     -translate-x-16
     transition-all
-    transition 
     duration-300
     ease-in
 `
 
 export const XPText = `
     absolute
-    -top-1
+    -top-6
     left-2
     text-gray
     font-bold
@@ -52,7 +50,7 @@ export const XPTextSpan = "text-white"
 
 export const LevelText = `
     absolute
-    -bottom-1
+    -bottom-6
     right-2
     text-gray
     font-bold
