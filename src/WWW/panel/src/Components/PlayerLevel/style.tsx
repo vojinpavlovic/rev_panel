@@ -30,9 +30,6 @@ export const Icon = `
     absolute
     translate-y-1
     -translate-x-16
-    transition-all
-    duration-300
-    ease-in
 `
 
 export const XPText = `

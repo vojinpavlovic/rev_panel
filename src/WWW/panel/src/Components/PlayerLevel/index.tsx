@@ -1,16 +1,14 @@
 import * as Style from './style'
 
 import GunIcon from '../../Static/Images/gun-icon.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
 
 const PlayerLevel = (): JSX.Element => {
     const [ fill, setFill ] = useState<Number>(0)
     
-    setTimeout(() => {
-        setFill(60)
-    }, 1500) // Test
+    useEffect(() => setFill(60), [])
 
     return (
         <motion.div
@@ -47,7 +45,7 @@ const PlayerLevel = (): JSX.Element => {
             <motion.div
                 className={Style.FillLine} 
                 animate={{width: `${fill}%`}}
-                transition={{ ease: "easeOut", duration: 0.2 }}
+                transition={{ ease: "easeOut", duration: 1 }}
             /> 
 
             {fill > 0 && 
@@ -56,7 +54,7 @@ const PlayerLevel = (): JSX.Element => {
                     initial={{ opacity: 0 }}
                     animate={{left: `${fill}%`, opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.2 }}
+                    transition={{ ease: "easeOut", duration: 1 }}
                     //style={{left: `${fill}%`}} 
                     src={GunIcon} 
                     alt="level-gun-icon"
