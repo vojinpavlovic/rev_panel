@@ -3,6 +3,8 @@ import * as Style from './style'
 import GunIcon from '../../Static/Images/gun-icon.png';
 import { useState } from 'react';
 
+import { motion } from 'framer-motion';
+
 const PlayerLevel = (): JSX.Element => {
     const [ fill, setFill ] = useState<Number>(0)
     
@@ -11,17 +13,56 @@ const PlayerLevel = (): JSX.Element => {
     }, 1500) // Test
 
     return (
-        <div className={Style.Wrapper}>
-            <h1 className={Style.XPText}>
-                <XP current={1300} needed={3200}/>
-            </h1>
-            <h1 className={Style.LevelText}>
-                <Level current={7}/>
-            </h1>
+        <motion.div
+            className={Style.Wrapper}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            {fill > 0 && 
+                <motion.h1 
+                    className={Style.XPText}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                        <XP current={1300} needed={3200}/>
+                </motion.h1>
+            }
+
+
+            {fill > 0 && 
+                <motion.h1 
+                    className={Style.LevelText}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
+                    <Level current={7}/>
+                </motion.h1> 
+            }
+
             <div className={Style.Line}></div>
-            <div className={Style.FillLine} style={{width: `${fill}%`}}></div>
-            {fill > 0 && <img className={Style.Icon} style={{left: `${fill}%`}} src={GunIcon} alt="level-gun-icon"/>}
-        </div>
+
+            <motion.div
+                className={Style.FillLine} 
+                animate={{width: `${fill}%`}}
+                transition={{ ease: "easeOut", duration: 0.2 }}
+            /> 
+
+            {fill > 0 && 
+                <motion.img 
+                    className={Style.Icon} 
+                    initial={{ opacity: 0 }}
+                    animate={{left: `${fill}%`, opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.2 }}
+                    //style={{left: `${fill}%`}} 
+                    src={GunIcon} 
+                    alt="level-gun-icon"
+                />
+            }
+        </motion.div>
     )
 }
 

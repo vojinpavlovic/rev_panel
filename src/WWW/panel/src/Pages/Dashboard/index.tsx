@@ -5,7 +5,10 @@ import TrailerVideo from '../../Components/TrailerVideo'
 import UpdateLogCard from '../../Components/UpdateLogCard'
 import Menu from '../../Components/Menu'
 import PlayerLevel from '../../Components/PlayerLevel'
+
 import { CardType } from '../../Types/UpdateLogTypes'
+
+import { motion } from "framer-motion";
 
 const dashboard = () => {
     const updateLogData: Array<CardType> = [
@@ -26,16 +29,127 @@ const dashboard = () => {
                         <p>Revolucija Roleplay Sezona 3 Trailer</p>
                         <TrailerVideo/>
                     </div>
-                    <div className={Style.PlayerLevelRow}>
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className={Style.PlayerLevelRow}
+                    >
                         <PlayerLevel/>
-                    </div>
-                    <div className={Style.UpdateLogRow}>
+                    </motion.div>
+                    
+                    <motion.div 
+                        className={Style.UpdateLogRow}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
                         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
                         { updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
-                    </div>
+                    </motion.div>
                 </div>
                 
                 <div className={Style.RightContentBody}>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
+                    <p>No content yet</p>
                     <p>No content yet</p>
                 </div>
             </div>

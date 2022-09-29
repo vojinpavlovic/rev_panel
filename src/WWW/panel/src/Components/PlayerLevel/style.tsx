@@ -15,9 +15,6 @@ export const FillLine = `
     block
     h-2
     bg-white
-    transition-all
-    duration-300
-    ease-in
 `
 
 export const Line = `

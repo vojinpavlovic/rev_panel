@@ -11,6 +11,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.12",
+    "framer-motion": "^7.5.0",
     "postcss": "^8.4.16",
     "postcss-cli": "^10.0.0",
     "react": "^18.2.0",
