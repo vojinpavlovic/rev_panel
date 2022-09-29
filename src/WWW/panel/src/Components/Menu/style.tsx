@@ -17,3 +17,19 @@ export const HamburgerButtonSpan = `
 
 export const HamburgerButtonSpanWide = "w-8"
 export const HamburgerButtonSpanNormal = "w-6"
+
+export const Menu = `
+    fixed
+    z-50
+    left-0
+    top-0
+    w-full
+    drop-shadow-2xl
+    bg-dark
+    transition-height
+    duration-200
+`
+
+export const MenuContent = `
+    p-10
+`

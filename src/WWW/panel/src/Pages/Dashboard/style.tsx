@@ -1,5 +1,5 @@
 export const Wrapper = `
-    w-full
+    overflow-x-hidden
     min-h-screen
     bg-dark
     bg-dashboard-bg
@@ -13,26 +13,31 @@ export const Wrapper = `
 export const ContentBody = `
     text-white
     max-w-content-body
-    w-10/12
+    w-12/12
     flex
+    flex-col
+    xl:flex-row
+    xl:w-10/12
 `
 
 export const LeftContentBody = `
     w-screen
     flex
     flex-col
-    h-screen
-    top-0
-
+    w-12/12
+    
     xl:w-5/12
-    xl:sticky
-
     2xl:w-4/12
 `
 
 export const RightContentBody = `
-    w-8/12
-    h-p-96
+    flex
+    flex-col
+    min-h-screen
+    top-0
+    w-12/12
+    xl:w-7/12
+    2xl:w-8/12
 `
 
 export const MenuRow = `
@@ -50,7 +55,11 @@ export const TrailerRow = `
     text-xl
     text-gray
     font-bold
+    flex
+    flex-col
+    items-center
 
+    xl:block
     xl:text-left
     xl:text-sm
 `
@@ -58,6 +67,9 @@ export const TrailerRow = `
 export const PlayerLevelRow = `
     mx-5
     w-12/12
+    
+    flex
+    justify-center
 `
 
 export const UpdateLogRow = `

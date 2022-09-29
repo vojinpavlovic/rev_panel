@@ -1,8 +1,13 @@
 export const Wrapper = `
+    my-3
     relative
     h-12
     flex
     items-center
+    w-full
+
+    md:w-10/12
+    xl:w-full
 `
 
 export const FillLine = `

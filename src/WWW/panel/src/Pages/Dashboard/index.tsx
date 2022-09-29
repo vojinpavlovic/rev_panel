@@ -34,11 +34,10 @@ const dashboard = () => {
                         { updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
                     </div>
                 </div>
-                {/*
+                
                 <div className={Style.RightContentBody}>
                     <p>No content yet</p>
                 </div>
-                */}
             </div>
         </div>
     )
