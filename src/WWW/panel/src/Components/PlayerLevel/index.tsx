@@ -1,9 +1,7 @@
 import * as Style from './style'
+import * as Motion from './motion'
 
-import GunIcon from '../../Static/Images/gun-icon.png';
 import { useEffect, useState } from 'react';
-
-import { motion } from 'framer-motion';
 
 const PlayerLevel = (): JSX.Element => {
     const [ fill, setFill ] = useState<Number>(0)
@@ -11,56 +9,15 @@ const PlayerLevel = (): JSX.Element => {
     useEffect(() => setFill(60), [])
 
     return (
-        <motion.div
-            className={Style.Wrapper}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-        >
-            {fill > 0 && 
-                <motion.h1 
-                    className={Style.XPText}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                >
-                        <XP current={1300} needed={3200}/>
-                </motion.h1>
-            }
-
-
-            {fill > 0 && 
-                <motion.h1 
-                    className={Style.LevelText}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                >
-                    <Level current={7}/>
-                </motion.h1> 
-            }
-
+        <Motion.Wrapper>
+            <>
+            {fill > 0 && <Motion.XP><XP current={1300} needed={3200}/></Motion.XP>}
+            {fill > 0 && <Motion.Level><Level current={7}/></Motion.Level>}
             <div className={Style.Line}></div>
-
-            <motion.div
-                className={Style.FillLine} 
-                animate={{width: `${fill}%`}}
-                transition={{ ease: "easeOut", duration: 1 }}
-            /> 
-
-            {fill > 0 && 
-                <motion.img 
-                    className={Style.Icon} 
-                    initial={{ opacity: 0 }}
-                    animate={{left: `${fill}%`, opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ ease: "easeOut", duration: 1 }}
-                    //style={{left: `${fill}%`}} 
-                    src={GunIcon} 
-                    alt="level-gun-icon"
-                />
-            }
-        </motion.div>
+            <Motion.FillLine fill={fill}/>
+            {fill > 0 && <Motion.Icon fill={fill}/>}
+            </>
+        </Motion.Wrapper>
     )
 }
 
