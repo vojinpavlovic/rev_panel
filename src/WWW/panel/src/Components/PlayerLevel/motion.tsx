@@ -43,7 +43,7 @@ export const FillLine = ({fill}: {fill: Number}): JSX.Element => (
     <motion.div
         className={Style.FillLine} 
         animate={{width: `${fill}%`}}
-        transition={{ ease: "easeIn", duration: 0.5 }}
+        transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
     /> 
 )
 
@@ -53,7 +53,7 @@ export const Icon = ({fill}: {fill: Number}): JSX.Element => (
         initial={{ opacity: 0 }}
         animate={{left: `${fill}%`, opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
+        transition={{ ease: "easeIn", duration: 0.5, delay: 0.8 }}
         src={GunIcon} 
         alt="level-gun-icon"
     />
