@@ -3,6 +3,8 @@ import * as Style from './style'
 import Logo from '../../Components/Logo'
 import TrailerVideo from '../../Components/TrailerVideo'
 import UpdateLogCard from '../../Components/UpdateLogCard'
+import Menu from '../../Components/Menu'
+import PlayerLevel from '../../Components/PlayerLevel'
 import { CardType } from '../../Types/UpdateLogTypes'
 
 const dashboard = () => {
@@ -17,11 +19,15 @@ const dashboard = () => {
             <div className={Style.ContentBody}>
                 <div className={Style.LeftContentBody}>
                     <div className={Style.MenuRow}>
+                        <Menu/>
                         <Logo/>
                     </div>
                     <div className={Style.TrailerRow}>
                         <p>Revolucija Roleplay Sezona 3 Trailer</p>
                         <TrailerVideo/>
+                    </div>
+                    <div className={Style.PlayerLevelRow}>
+                        <PlayerLevel/>
                     </div>
                     <div className={Style.UpdateLogRow}>
                         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>

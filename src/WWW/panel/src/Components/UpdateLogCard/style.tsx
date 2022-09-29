@@ -7,10 +7,8 @@ export const Card = `
     flex
     items-center
     hover:bg-red-transparent
-    hover:cursor-pointer
     hover:shadow-xl
     duration-200
-    -z-50
 `
 
 export const DateText = `

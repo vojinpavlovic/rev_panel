@@ -3,6 +3,7 @@ export const Wrapper = `
     min-h-screen
     bg-dark
     bg-dashboard-bg
+    bg-center
     bg-fixed
     flex
     justify-center
@@ -23,8 +24,10 @@ export const LeftContentBody = `
     h-screen
     top-0
 
+    xl:w-5/12
+    xl:sticky
+
     2xl:w-4/12
-    2xl:sticky
 `
 
 export const RightContentBody = `
@@ -36,6 +39,8 @@ export const MenuRow = `
     w-12/12
     my-10
     mx-5
+    flex
+    gap-4
 `
 
 export const TrailerRow = `
@@ -46,8 +51,13 @@ export const TrailerRow = `
     text-gray
     font-bold
 
-    2xl:text-center
-    2xl:text-md
+    xl:text-left
+    xl:text-sm
+`
+
+export const PlayerLevelRow = `
+    mx-5
+    w-12/12
 `
 
 export const UpdateLogRow = `
@@ -55,7 +65,7 @@ export const UpdateLogRow = `
     w-12/12
     mx-5
 
-    2xl:block
+    xl:block
 `
 
 export const UpdateLogRowTitle = `

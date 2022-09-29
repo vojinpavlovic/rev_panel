@@ -16,13 +16,12 @@ export const TrailerVideo = `
 `
 
 export const VideoShow = `
-    bg-black
+    bg-black-opacity-70
     w-screen
     h-screen
     fixed
     top-0
     left-0
-    opacity-70
     flex
     justify-center
     items-center
