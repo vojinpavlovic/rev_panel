@@ -15,6 +15,7 @@ export const FillLine = `
     block
     h-2
     bg-white
+    rounded-l-md
 `
 
 export const Line = `
@@ -23,12 +24,12 @@ export const Line = `
     w-full
     h-2
     bg-level-fill-line
-    rounded-sm
+    rounded-md
 `
 
 export const Icon = `
     absolute
-    translate-y-1
+    translate-y-0.5
     -translate-x-16
 `
 

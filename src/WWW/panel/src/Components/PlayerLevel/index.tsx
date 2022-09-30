@@ -4,7 +4,7 @@ import * as Motion from './motion'
 import { useEffect, useState } from 'react';
 
 const PlayerLevel = (): JSX.Element => {
-    const [ fill, setFill ] = useState<Number>(0)
+    const [ fill, setFill ] = useState<number>(0)
     
     useEffect(() => setFill(60), [])
 
@@ -15,7 +15,7 @@ const PlayerLevel = (): JSX.Element => {
             {fill > 0 && <Motion.Level><Level current={7}/></Motion.Level>}
             <div className={Style.Line}></div>
             <Motion.FillLine fill={fill}/>
-            {fill > 0 && <Motion.Icon fill={fill}/>}
+            {fill > 0 && <Motion.Icon fill={fill - 1}/>}
             </>
         </Motion.Wrapper>
     )

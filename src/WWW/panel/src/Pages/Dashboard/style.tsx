@@ -18,6 +18,7 @@ export const ContentBody = `
     flex-col
     xl:flex-row
     xl:w-10/12
+    z-10
 `
 
 export const LeftContentBody = `
@@ -31,6 +32,7 @@ export const LeftContentBody = `
 `
 
 export const RightContentBody = `
+    relative
     flex
     flex-col
     min-h-screen
@@ -85,4 +87,20 @@ export const UpdateLogRowTitle = `
     font-bold
     text-xl
     text-gray
+`
+
+/**
+ * Right body
+ */
+
+export const AvatarRow = `
+    my-10
+    mx-6
+    w-12/12
+`
+
+export const CharacterImage = `
+    absolute
+    top-10
+    right-10
 `
