@@ -20,7 +20,7 @@ export const HourContainer = `
 `
 
 export const AccountContainer = `
-    w-6/12 
+    w-7/12 
     h-16
     rounded-lg
     backdrop-blur-sm
