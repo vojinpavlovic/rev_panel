@@ -6,7 +6,7 @@ export const Wrapper = `
 
 export const Image = `
     rounded-full
-    w-20 h-20
+    w-16 h-16
     drop-shadow-xl
 `
 
@@ -17,12 +17,12 @@ export const UserInfoWrapper = `
 `
 
 export const Name = `
-    text-2xl
+    text-xl
     font-black
 `
 
 export const Job = `
-    text-xl
+    text-md
     text-gray
     font-bold
 `
