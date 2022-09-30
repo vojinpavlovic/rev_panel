@@ -2,11 +2,7 @@ import * as Style from './style'
 
 import CharacterImage from '../../Static/Images/character.png'
 
-import Logo from '../../Components/Logo'
-import TrailerVideo from '../../Components/TrailerVideo'
 import UpdateLogCard from '../../Components/UpdateLogCard'
-import Menu from '../../Components/Menu'
-import PlayerLevel from '../../Components/PlayerLevel'
 import Avatar from '../../Components/Avatar'
 import SmokeMotion from '../../Components/SmokeMotion'
 
@@ -14,6 +10,9 @@ import { CardType } from '../../Types/UpdateLogTypes'
 
 import { motion} from "framer-motion";
 
+import MenuRow from './rows/MenuRow'
+import TrailerRow from './rows/TrailerRow'
+import PlayerRow from './rows/PlayerRow'
 
 const Dashboard = () => {
     const updateLogData: Array<CardType> = [
@@ -28,32 +27,13 @@ const Dashboard = () => {
             <div className={Style.ContentBody}>
                 <SmokeMotion/>
                 <div className={Style.LeftContentBody}>
-                    <div className={Style.MenuRow}>
-                        <Menu/>
-                        <Logo/>
-                    </div>
-                    <div className={Style.TrailerRow}>
-                        <p>Revolucija Roleplay Sezona 3 Trailer</p>
-                        <TrailerVideo/>
-                    </div>
-                    <motion.div 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        className={Style.PlayerLevelRow}
-                    >
-                        <PlayerLevel/>
-                    </motion.div>
-                    
-                    <motion.div 
-                        className={Style.UpdateLogRow}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
+                    <MenuRow/>
+                    <TrailerRow/>
+                    <PlayerRow/>
+                    <motion.div className={Style.UpdateLogRow} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}viewport={{ once: true }}>
                         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
                         { updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
-                    </motion.div>
+                    </motion.div>                
                 </div>
                 <RightContentBody/>
             </div>
@@ -65,7 +45,7 @@ const RightContentBody = () => {
     return (
         <div className={Style.RightContentBody}>
             <motion.img
-                className={`${Style.CharacterImage}`}
+                className={`${Style.CharacterImage} z-[-2]`}
                 src={CharacterImage}
                 />
             <div className={Style.AvatarRow}>
