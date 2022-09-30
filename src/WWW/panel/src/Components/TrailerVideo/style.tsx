@@ -1,30 +1,35 @@
 export const TrailerVideo = `
     my-4
-    w-12/12
-    bg-blue-500
+
+    flex
+    justify-center
+    items-center
+
+    w-full
+    h-60
+    rounded-md
+        
     bg-trailer-thumbnail
     bg-cover
     bg-center
-    h-60
-    rounded-md
-    shadow-lg
-    flex
-    justify-center
-    items-center
 
-    2xl:h-44
+    md:w-10/12
+
+    xl:w-full
 `
 
 export const VideoShow = `
-    bg-black
-    w-screen
-    h-screen
     fixed
     top-0
     left-0
-    opacity-70
     flex
-    justify-center
     items-center
+    justify-center
+    
+    w-screen
+    h-screen
+    
+    bg-black-opacity-70
+    
     z-50
 `
