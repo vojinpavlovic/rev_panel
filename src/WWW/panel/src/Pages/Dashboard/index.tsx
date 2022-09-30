@@ -29,8 +29,8 @@ const Dashboard = () => {
                 <div className={Style.LeftContentBody}>
                     <MenuRow/>
                     <TrailerRow/>
-                    <PlayerRow/>
-                    <motion.div className={Style.UpdateLogRow} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}viewport={{ once: true }}>
+                    <PlayerRow/> 
+                    <motion.div className={Style.UpdateLogRow}animate={{ opacity: [0, 1] }}  transition={{delay: 1}}>
                         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
                         { updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
                     </motion.div>                

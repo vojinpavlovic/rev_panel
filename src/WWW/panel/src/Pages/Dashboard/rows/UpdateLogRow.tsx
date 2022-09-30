@@ -9,8 +9,8 @@ import { CardType } from "../../../Types/UpdateLogTypes";
 const UpdateLogRow = (list: Array<CardType>) => {
     <motion.div 
         className={Style.UpdateLogRow}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: [0, 1] }}
+        transition={{delay: 1}}
         viewport={{ once: true }}
     >
         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
