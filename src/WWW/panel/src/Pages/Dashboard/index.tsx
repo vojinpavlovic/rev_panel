@@ -13,6 +13,7 @@ import { motion} from "framer-motion";
 import MenuRow from './rows/MenuRow'
 import TrailerRow from './rows/TrailerRow'
 import PlayerRow from './rows/PlayerRow'
+import PlayerAccounts from '../../Components/PlayerAccounts'
 
 const Dashboard = () => {
     const updateLogData: Array<CardType> = [
@@ -50,6 +51,9 @@ const RightContentBody = () => {
                 />
             <div className={Style.AvatarRow}>
                 <Avatar/>    
+            </div>
+            <div>
+                <PlayerAccounts/>    
             </div>    
         </div>
     )
