@@ -13,7 +13,7 @@ import { motion} from "framer-motion";
 import MenuRow from './rows/MenuRow'
 import TrailerRow from './rows/TrailerRow'
 import PlayerRow from './rows/PlayerRow'
-import PlayerAccounts from '../../Components/PlayerAccounts'
+import PlayerAccounts from '../../Components/PlayerStats'
 
 const Dashboard = () => {
     const updateLogData: Array<CardType> = [

@@ -4,7 +4,7 @@ import ControllerIcon from '../SVG/ControllerIcon';
 import MoneyIcon from '../SVG/MoneyIcon';
 import * as Style from './style';
 
-const PlayerAccounts = () => {
+const PlayerStats = () => {
     return (
         <div className={Style.Wrapper}>
             <div className={Style.HourContainer}>
@@ -31,4 +31,4 @@ const PlayerAccounts = () => {
     );
 }
 
-export default PlayerAccounts;
+export default PlayerStats;
