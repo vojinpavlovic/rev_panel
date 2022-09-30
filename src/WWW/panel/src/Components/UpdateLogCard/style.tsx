@@ -8,7 +8,7 @@ export const Card = `
     items-center
     hover:bg-red-transparent
     hover:shadow-xl
-    duration-200
+    z-[5]
 `
 
 export const DateText = `
