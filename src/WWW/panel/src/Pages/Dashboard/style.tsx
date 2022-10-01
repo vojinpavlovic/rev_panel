@@ -38,6 +38,8 @@ export const RightContentBody = `
     min-h-screen
     top-0
     w-12/12
+    
+    xl:relative
     xl:w-7/12
     2xl:w-8/12
 `
@@ -47,6 +49,8 @@ export const MenuRow = `
     my-10
     mx-5
     flex
+    justify-center
+    sm:justify-start
     gap-4
 `
 
@@ -96,11 +100,19 @@ export const UpdateLogRowTitle = `
 export const AvatarRow = `
     my-10
     mx-6
+    md:mx-20
     w-12/12
+    xl:mx-6
+    justify-center
+    sm:justify-start
 `
 
 export const CharacterImage = `
+    hidden
+    sm:block
     absolute
     top-10
-    right-10
+    right-4
+    xl:top-10
+    xl:right-10
 `
