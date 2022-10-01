@@ -16,6 +16,8 @@ import PlayerRow from './rows/PlayerRow'
 import PlayerAccounts from '../../Components/PlayerStats'
 
 const Dashboard = () => {
+    document.title = `${document.title} - Dashboard`
+
     const updateLogData: Array<CardType> = [
         {date: new Date(), title: "Dodani novi automobili u auto salonu..."},
         {date: new Date(), title: "Popravljen Carry sistem i ispadanje iz automobila..."},
