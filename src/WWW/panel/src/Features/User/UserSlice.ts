@@ -1,10 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { UserState } from '../../Types/UserState';
 
-
-interface UserState {
-    user: any | null,
-    loading: boolean
-}
+const getUser = createAsyncThunk('users/fetchById', 
+    async () => {
+      const response = await fetch(`http://localhost:3001`)
+      return (await response.json())
+    }
+  )
 
 const initialState: UserState = {
     user: null,
@@ -14,15 +16,27 @@ const initialState: UserState = {
 const userSlice = createSlice({
     name: "user",
     initialState,
-    reducers: {
-        get(state) {
+    reducers: {},
+    extraReducers: (builder) => {
+        // On Fetching
+        builder.addCase(getUser.pending, (state) => {
+            state.loading = true;
+        })
 
-        },
-        reset(state) {
-            state.user = null
-        }
+        // On Success
+        builder.addCase(getUser.fulfilled, (state, action) => {
+            state.user = action.payload || null;
+            state.loading = false;
+        })
+
+        // On Failure
+        builder.addCase(getUser.rejected, (state) => {
+            state.user = null;
+            state.loading = false;
+        })
     }
 })
 
-export const { get, reset } = userSlice.actions;
+export { getUser };
+
 export default userSlice.reducer;

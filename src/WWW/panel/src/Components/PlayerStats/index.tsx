@@ -1,10 +1,16 @@
+import { useSelector } from 'react-redux';
+import { RootState } from '../../App/Store';
+import KFormatter from '../../Utils/KFormatter';
 import BankMoneyIcon from '../SVG/BankMoneyIcon';
 import BlackMoneyIcon from '../SVG/BlackMoneyIcon';
 import ControllerIcon from '../SVG/ControllerIcon';
 import MoneyIcon from '../SVG/MoneyIcon';
 import * as Style from './style';
 
+
 const PlayerStats = () => {
+    const { accounts } = useSelector((state: RootState) => state.user.user)
+
     return (
         <div className={Style.Wrapper}>
             <div className={Style.HourContainer}>
@@ -16,15 +22,15 @@ const PlayerStats = () => {
             <div className={Style.AccountContainer}>
                 <div className="flex gap-2 text-xl font-bold">
                     <MoneyIcon/>
-                    $450k
+                    ${KFormatter(accounts.money)}
                 </div>
                 <div className="flex gap-2 text-xl font-bold">
                     <BlackMoneyIcon/>
-                    $738
+                    ${KFormatter(accounts.blackMoney)}
                 </div>
                 <div className="flex gap-2 text-xl font-bold">
                     <BankMoneyIcon/>
-                    $1.485k
+                    ${KFormatter(accounts.bank)}
                 </div>
             </div>
         </div>
