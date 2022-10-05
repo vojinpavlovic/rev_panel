@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../App/Store';
 import KFormatter from '../../Utils/KFormatter';
@@ -13,13 +14,13 @@ const PlayerStats = () => {
 
     return (
         <div className={Style.Wrapper}>
-            <div className={Style.HourContainer}>
+            <motion.div whileHover={{scale: 1.15}} className={Style.HourContainer}>
                 <div className="flex justify-center items-center gap-2 text-xl font-bold">
                     <ControllerIcon/>
                     <p>450<span className="text-gray text-sm"> sati na server</span></p>
                 </div>
-            </div>
-            <div className={Style.AccountContainer}>
+            </motion.div>
+            <motion.div whileHover={{scale: 1.15}} className={Style.AccountContainer}>
                 <div className="flex gap-2 text-xl font-bold">
                     <MoneyIcon/>
                     ${KFormatter(accounts.money)}
@@ -32,7 +33,7 @@ const PlayerStats = () => {
                     <BankMoneyIcon/>
                     ${KFormatter(accounts.bank)}
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }

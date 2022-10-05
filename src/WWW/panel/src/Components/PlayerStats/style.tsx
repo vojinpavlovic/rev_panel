@@ -28,6 +28,8 @@ export const HourContainer = `
     flex
     justify-center
     items-center
+    cursor-default
+    select-none
 `
 
 export const AccountContainer = `
@@ -52,4 +54,6 @@ export const AccountContainer = `
     xl:justify-between
     xl:h-16
     xl:w-7/12 
+    cursor-default
+    select-none
 `
