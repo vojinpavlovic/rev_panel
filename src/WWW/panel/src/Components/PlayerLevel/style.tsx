@@ -1,19 +1,18 @@
 export const Wrapper = `
-    my-8
     relative
+    w-full
     h-12
     flex
     items-center
-    w-full
-
+    my-8
     md:w-10/12
     xl:w-full
 `
 
 export const FillLine = `
+    h-2
     absolute
     block
-    h-2
     bg-white
     rounded-l-md
 `

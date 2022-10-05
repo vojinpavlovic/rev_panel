@@ -6,7 +6,8 @@ export const Wrapper = `
 
 export const Image = `
     rounded-full
-    w-16 h-16
+    w-16 
+    h-16
     drop-shadow-xl
 `
 
