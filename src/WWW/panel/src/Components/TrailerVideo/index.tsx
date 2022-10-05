@@ -8,7 +8,11 @@ const TrailerVideo = (): JSX.Element => {
     const [ showTrailer, setShowTrailer ] = useState<Boolean>(false)
 
     return (
-        <motion.div animate={{opacity: [0, 1]}} transition={{delay: 0.5}} className={Style.TrailerVideo}>
+        <motion.div 
+            animate={{opacity: [0, 1]}} 
+            transition={{delay: 0.5}} 
+            className={Style.TrailerVideo}
+        >
             {showTrailer && <ShowTrailer onClick={setShowTrailer}/>} 
             <button onClick={() => setShowTrailer(true)}>
                 <PlaySVG/>

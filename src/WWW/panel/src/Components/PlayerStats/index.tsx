@@ -8,7 +8,6 @@ import ControllerIcon from '../SVG/ControllerIcon';
 import MoneyIcon from '../SVG/MoneyIcon';
 import * as Style from './style';
 
-
 const PlayerStats = () => {
     const { accounts } = useSelector((state: RootState) => state.user.user)
 

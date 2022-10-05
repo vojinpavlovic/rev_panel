@@ -12,7 +12,7 @@ export default(app) => {
     // Controllers 
     const authController: AuthController = container.get(DependencyTypes.AuthController);
 
-    app.get('/', authController.test);
+    app.get('/', isAuth, authController.test);
 
     // Endpoints    
     app.get('/api/auth/steam', notAuth, AuthMiddleware(), authController.login);

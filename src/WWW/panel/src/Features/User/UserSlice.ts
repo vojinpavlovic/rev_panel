@@ -21,7 +21,9 @@ const userSlice = createSlice({
 
         // On Success
         builder.addCase(getUser.fulfilled, (state, action) => {
-            state.user = action.payload || null;
+            if (action.payload.data) {
+                state.user = action.payload || null;
+            }
             state.loading = false;
         })
 

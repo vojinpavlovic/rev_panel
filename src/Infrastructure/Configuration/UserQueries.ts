@@ -9,6 +9,7 @@ export default {
             users.health AS user_health,
             users.pancir AS user_pancir,
             users.group AS user_group,
+            users.vreme AS user_timeTotal
             owned_vehicles.plate AS vehicle_plate,
             owned_vehicles.vehicle AS vehicle_specs, 
             owned_vehicles.model AS vehicle_model,

@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Loading from '../Components/Loading';
 import useUser from '../Hooks/useUser';
+import Auth from '../Pages/Auth';
 import Dashboard from '../Pages/Dashboard';
 import { UserState } from '../Types/UserState';
+import AuthRoute from './AuthRoute';
 import ProtectedRoute from './ProtectedRoute';
 
 const Router = () => {
@@ -14,9 +16,12 @@ const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<ProtectedRoute user={user}/>}>
-                    <Route path="/dashboard" element={<Dashboard/>}/>
+                    <Route path="/panel" element={<Dashboard/>}/>
                 </Route> 
-                <Route path="/loading" element={<Loading/>}/>              
+                <Route element={<AuthRoute user={user}/>}>
+                    <Route path="/prijava" element={<Auth/>}/>
+                </Route>
+                <Route path="*" element={user ? <Dashboard/> : <Auth/>}/>           
             </Routes>
         </BrowserRouter>
     );
