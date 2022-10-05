@@ -1,12 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { UserState } from '../../Types/UserState';
+import fetchAPI from '../../Helpers/fetchAPI';
 
-const getUser = createAsyncThunk('users/fetchById', 
-    async () => {
-      const response = await fetch(`http://localhost:3001`)
-      return (await response.json())
-    }
-  )
+const getUser = createAsyncThunk('users/fetchById', async () =>  await fetchAPI({endpoint: ""}))
 
 const initialState: UserState = {
     user: null,
