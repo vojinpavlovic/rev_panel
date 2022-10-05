@@ -1,11 +1,13 @@
 import SimpleLayout from "../../Components/SimpleLayout";
 
 const Auth = (): JSX.Element => {
-    return(
+    const openInNewTab = (url: string): void => {
+        window.open(url, '_self', 'noopener,noreferrer');
+    };
+
+    return (
         <SimpleLayout>
-            <p>
-                Steam Sign In nije jos implementirano
-            </p>
+            <button onClick={() => openInNewTab('http://localhost:3001/api/auth/steam')}>Prijavi se na steam</button>
         </SimpleLayout>
     );
 }

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { UserState } from '../../Types/UserState';
 import fetchAPI from '../../Helpers/fetchAPI';
 
-const getUser = createAsyncThunk('users/fetchById', async () =>  await fetchAPI({endpoint: ""}))
+const getUser = createAsyncThunk('users/fetchById', async () =>  await fetchAPI({endpoint: "", credentials: true}))
 
 const initialState: UserState = {
     user: null,
@@ -21,8 +21,9 @@ const userSlice = createSlice({
 
         // On Success
         builder.addCase(getUser.fulfilled, (state, action) => {
+            console.log(action.payload)
             if (action.payload.data) {
-                state.user = action.payload || null;
+                state.user = action.payload.data || null;
             }
             state.loading = false;
         })

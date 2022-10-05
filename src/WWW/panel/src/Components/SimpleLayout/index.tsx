@@ -7,6 +7,8 @@ const style = `
     justify-center
     items-center
     text-white
+    h-screen
+    w-screen
 `
 
 const SimpleLayout = ({children}: ChildrenProp): JSX.Element => {
