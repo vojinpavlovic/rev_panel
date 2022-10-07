@@ -6,6 +6,7 @@ const getUser = createAsyncThunk('users/fetchById', async () =>  await fetchAPI(
 
 const initialState: UserState = {
     user: null,
+    steam: null,
     loading: true
 }
 
@@ -21,8 +22,10 @@ const userSlice = createSlice({
 
         // On Success
         builder.addCase(getUser.fulfilled, (state, action) => {
+            console.log(action.payload)
             if (action.payload.data) {
-                state.user = action.payload.data || null;
+                state.user = action.payload.data.user || null;
+                state.steam = action.payload.data.steam || null;
             }
             state.loading = false;
         })

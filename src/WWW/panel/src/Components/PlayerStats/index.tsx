@@ -9,14 +9,14 @@ import MoneyIcon from '../SVG/MoneyIcon';
 import * as Style from './style';
 
 const PlayerStats = () => {
-    const { accounts } = useSelector((state: RootState) => state.user.user)
+    const { totalTime, accounts } = useSelector((state: RootState) => state.user.user)
 
     return (
         <div className={Style.Wrapper}>
             <motion.div whileHover={{scale: 1.15}} className={Style.HourContainer}>
                 <div className="flex justify-center items-center gap-2 text-xl font-bold">
                     <ControllerIcon/>
-                    <p>450<span className="text-gray text-sm"> sati na server</span></p>
+                    <p>{totalTime}<span className="text-gray text-sm"> sati na server</span></p>
                 </div>
             </motion.div>
             <motion.div whileHover={{scale: 1.15}} className={Style.AccountContainer}>

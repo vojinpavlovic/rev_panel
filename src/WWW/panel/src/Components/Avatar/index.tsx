@@ -2,16 +2,16 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../App/Store';
 import * as Style from './style';
 
-const url = "http://mcf.rs/upload/Movie/Galleries/2022-05/s2267_0270_marketingSelect_comp2k_v01.1145_R.jpeg"
 const Avatar = () => {
-    const { firstname, lastname } = useSelector((state: RootState) => state.user.user)
-
+    const { job, firstname, lastname } = useSelector((state: RootState) => state.user.user)
+    const { name, avatar } = useSelector((state: RootState) => state.user.steam)
+    
     return (
         <div className={Style.Wrapper}>
-            <img className={Style.Image} src={url} alt="steam-icon"/>
+            <img className={Style.Image} src={avatar} alt="steam-icon"/>
             <div className={Style.UserInfoWrapper}>
-                <p className={Style.Name}>{firstname} {lastname}</p>
-                <p className={Style.Job}>Djido mova, Lesinar</p>
+                <p className={Style.Name}>{firstname} {lastname} <span className='text-sm text-gray font-regular'>({name})</span></p>
+                <p className={Style.Job}>{job.name ? job.name : ""}, {job.position ? job.position : ""}</p>
             </div>
         </div>    
     )
