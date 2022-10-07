@@ -14,7 +14,8 @@ module.exports = {
         "black-opacity-70": "rgba(0, 0, 0, 0.7)",
         "dark-transparent": "rgba(73,59,59,0.3)",
         "red-transparent": "rgba(220,9,10,0.52)",
-        "level-fill-line": "#131313"
+        "level-fill-line": "#131313",
+        "accounts-from-rgba": "rgba(35,35,36)",
       },
       backgroundImage: {
         "dashboard-bg": `url(/public/images/bg.png)`,

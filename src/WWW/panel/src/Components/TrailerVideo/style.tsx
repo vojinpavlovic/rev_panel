@@ -12,7 +12,7 @@ export const TrailerVideo = `
     bg-trailer-thumbnail
     bg-cover
     bg-center
-
+    group
     md:w-10/12
 
     xl:w-full

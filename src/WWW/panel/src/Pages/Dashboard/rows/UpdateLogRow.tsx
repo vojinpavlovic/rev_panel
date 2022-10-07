@@ -6,16 +6,22 @@ import UpdateLogCard from "../../../Components/UpdateLogCard";
 // Types
 import { CardType } from "../../../Types/UpdateLogTypes";
 
-const UpdateLogRow = (list: Array<CardType>) => {
+const updateLogData: Array<CardType> = [
+    {date: new Date(), title: "Dodani novi automobili u auto salonu..."},
+    {date: new Date(), title: "Popravljen Carry sistem i ispadanje iz automobila..."},
+    {date: new Date(), title: "Popravljeni sitni bugovi i optimizacija..."}
+]
+
+const UpdateLogRow = () => (
     <motion.div 
         className={Style.UpdateLogRow}
-        animate={{ opacity: [0, 1] }}
-        transition={{delay: 1}}
-        viewport={{ once: true }}
-    >
+        animate={{ opacity: [0, 1] }}  
+        transition={{delay: 1}}>
         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
-        { list.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) }
-    </motion.div>
-}
+        { 
+            updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) 
+        }
+    </motion.div>   
+)
 
 export default UpdateLogRow;

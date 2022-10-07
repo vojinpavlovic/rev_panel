@@ -1,5 +1,6 @@
 export default {
     AuthController: "AuthController",
+    UserController: "UserController",
     IUserService: "IUserService",
     IRedisService: "IRedisService",
     IMysqlService: "IMysqlService",

@@ -1,11 +1,12 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-const AuthRoute = ({user, redirectPath = '/panel', children}: any) => {
-    if (user) {
+const ProtectedRoute = ({user, redirectPath = '/prijava', children}: any) => {
+    console.log(user)
+    if (!user) {
         return <Navigate to={redirectPath} replace/>
     }
 
     return children ? children : <Outlet/>
 }
 
-export default AuthRoute
+export default ProtectedRoute

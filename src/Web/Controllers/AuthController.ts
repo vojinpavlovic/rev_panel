@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { inject, injectable } from "inversify";
 import { IUserService } from "../../Domain/Interfaces/IUserService";
 import { BaseController } from "../Base/BaseController";
-import { BaseResponse } from "../Base/BaseResponse";
 
 import DependencyTypes from "../../Common/DependencyTypes";
 
@@ -18,11 +17,6 @@ export class AuthController extends BaseController {
         this._userService = userService
     }
 
-    public test = async (req: Request, res: Response) => {
-        const user = await this._userService.getPlayer("1100001057a87a3");
-        res.send(user)
-    }
-
     /**
      * @method login
         Login method is empty since it is not invoked.
@@ -36,12 +30,6 @@ export class AuthController extends BaseController {
         by third party authentication such as Steam-Passport strategy.
     */
     public loginCallback = async (req: Request | any, res: Response) => {
-        const user = await this._userService.getPlayer(req.user.steamHexId)
-        
-        if (user !== undefined) {
-            return res.send(new BaseResponse(true, "Successfully logged in.", user));
-        }
-
-        return res.send(new BaseResponse(true, "Successfully logged in"))
+        res.redirect("http://localhost:3000/panel")
     }
 }   
