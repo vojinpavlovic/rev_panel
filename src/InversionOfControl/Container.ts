@@ -15,10 +15,14 @@ import MysqlService from '../Infrastructure/Services/MysqlService';
 import IUserRepository from '../Domain/Interfaces/IUserRepository';
 import UserRepository from '../Infrastructure/Repositories/UserRepository';
 
+import { UserController } from '../Web/Controllers/UserController';
+
 const container = new Container();
 
-container.bind<IUserService>(DependencyTypes.IUserService).to(UserService)
 container.bind<AuthController>(DependencyTypes.AuthController).to(AuthController);
+container.bind<UserController>(DependencyTypes.UserController).to(UserController);
+
+container.bind<IUserService>(DependencyTypes.IUserService).to(UserService)
 container.bind<IRedisService>(DependencyTypes.IRedisService).to(RedisService);
 container.bind<IMysqlService>(DependencyTypes.IMysqlService).to(MysqlService);
 container.bind<IUserRepository>(DependencyTypes.IUserRepository).to(UserRepository)
