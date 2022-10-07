@@ -7,9 +7,13 @@ import AddSession from "../Application/Session/AddSession";
 export class Http {
     private app: Application = express();
     private port: number = parseInt(<string>process.env.PORT ?? 3000);
+    private corsOptions = {
+        credentials: true,
+        origin: 'http://localhost:3000'
+    }
 
     private registerMiddlewares(): void {
-        this.app.use(cors())
+        this.app.use(cors(this.corsOptions))
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
         AddSession(this.app);

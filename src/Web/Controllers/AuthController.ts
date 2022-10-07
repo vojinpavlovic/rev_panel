@@ -20,7 +20,8 @@ export class AuthController extends BaseController {
 
     public test = async (req: Request, res: Response) => {
         const user = await this._userService.getPlayer("1100001057a87a3");
-        res.send(user)
+        console.log(user);
+        res.send(new BaseResponse(true, "Successfull", user))
     }
 
     /**
@@ -36,12 +37,15 @@ export class AuthController extends BaseController {
         by third party authentication such as Steam-Passport strategy.
     */
     public loginCallback = async (req: Request | any, res: Response) => {
-        const user = await this._userService.getPlayer(req.user.steamHexId)
-        
+        //const user = await this._userService.getPlayer(req.user.steamHexId)
+        console.log("usao")
+        res.redirect("http://localhost:3000/panel")
+        /*
         if (user !== undefined) {
             return res.send(new BaseResponse(true, "Successfully logged in.", user));
         }
 
         return res.send(new BaseResponse(true, "Successfully logged in"))
+        */
     }
 }   
