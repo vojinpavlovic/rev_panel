@@ -9,7 +9,7 @@ export class Http {
     private port: number = parseInt(<string>process.env.PORT ?? 3000);
     private corsOptions = {
         credentials: true,
-        origin: 'http://localhost:3000'
+        origin: 'http://sogolisica:3000'
     }
 
     private registerMiddlewares(): void {

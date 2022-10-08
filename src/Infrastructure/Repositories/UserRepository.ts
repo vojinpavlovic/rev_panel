@@ -27,7 +27,6 @@ class UserRepository implements IUserRepository {
             return undefined;
         }
 
-
         return new UserEntity(rows);
     }
 }

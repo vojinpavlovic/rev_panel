@@ -30,6 +30,6 @@ export class AuthController extends BaseController {
         by third party authentication such as Steam-Passport strategy.
     */
     public loginCallback = async (req: Request | any, res: Response) => {
-        res.redirect("http://localhost:3000/panel")
+        res.redirect("http://sogolisica:3000/panel")
     }
 }   
