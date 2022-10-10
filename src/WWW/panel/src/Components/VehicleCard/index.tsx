@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import VehicleFallback from '../../../Static/Images/vehicle-fallback.png'
+import VehicleFallback from '../../Static/Images/vehicle-fallback.png'
 
 const Style = {
     VehicleCard : `
