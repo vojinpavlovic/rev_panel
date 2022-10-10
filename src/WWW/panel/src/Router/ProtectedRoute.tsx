@@ -1,7 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
 const ProtectedRoute = ({user, redirectPath = '/prijava', children}: any) => {
-    console.log(user)
     if (!user) {
         return <Navigate to={redirectPath} replace/>
     }

@@ -9,19 +9,28 @@ export default {
             users.health AS user_health,
             users.pancir AS user_pancir,
             users.group AS user_group,
-            users.vreme AS user_timeTotal,
+            users.vreme AS user_totalTime,
+            owned_vehicles.ime AS vehicle_name,
             owned_vehicles.plate AS vehicle_plate,
-            owned_vehicles.vehicle AS vehicle_specs, 
-            owned_vehicles.model AS vehicle_model,
-            owned_vehicles.job AS vehicle_job,
-            owned_vehicles.slika AS vehicle_img
+            owned_vehicles.health AS vehicle_health,
+            owned_vehicles.slika AS vehicle_img,
+            jobs.label AS job_name,
+            job_grades.label AS job_position
         FROM 
             users
         LEFT OUTER JOIN 
             owned_vehicles 
         ON
             owned_vehicles.owner = users.identifier
+        LEFT JOIN 
+            jobs
+        ON
+            jobs.name = users.job
+        LEFT JOIN 
+            job_grades
+        ON 
+            job_grades.job_name = users.job AND job_grades.grade = users.job_grade
         WHERE 
-            users.identifier = ?   
+            users.identifier = ?;
     `
 }

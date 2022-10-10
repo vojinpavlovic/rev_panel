@@ -1,16 +1,13 @@
 class VehicleEntity {
+    public name: string;
     public plate: string;
-    public vehicle: string;
-    public model: string;
-    public job: string | null | undefined;
     public img: string | null | undefined;
-
+    public engineHP: number;
     constructor(result: any)
     {
+        this.name = result.vehicle_name;
+        this.engineHP = result.vehicle_health.engine ? result.vehicle_health.engineHP : 1000;
         this.plate = result.vehicle_plate;
-        this.vehicle = JSON.parse(result.vehicle_specs ? result.vehicle_specs : "{}");
-        this.model = result.vehicle_model;
-        this.job = result.vehicle_job;
         this.img = result.vehicle_img;
     }
 }

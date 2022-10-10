@@ -116,3 +116,57 @@ export const CharacterImage = `
     xl:top-10
     xl:right-10
 `
+export const StatCardsRow = `
+    w-12/12
+    xl:w-6/12
+    2xl:w-5/12
+    flex
+    flex-wrap
+    gap-5
+    mx-5 
+    my-16 
+    xl:my-5
+    justify-center 
+    xl:justify-start
+`
+
+export const InventoryRow = `
+    mx-5
+`
+
+export const InventoryWrapper = `
+    w-full
+    h-[30rem]
+    overflow-auto
+`
+
+export const InventoryCard = `
+    float-left
+    w-24 
+    h-24
+    flex 
+    justify-center
+    items-center 
+    border-2
+    border-dark-line
+`
+
+export const VehiclesRow = `
+    mx-5
+    my-5
+`
+
+export const VehicleCard = `
+    select-none
+    hover:cursor-default
+    my-5
+    bg-gradient-to-r 
+    from-transparent
+    to-dark-transparent
+    rounded-md
+    py-5
+    w-full
+    h-60
+    flex
+    items-center
+`

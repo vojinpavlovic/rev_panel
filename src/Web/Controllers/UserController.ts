@@ -25,23 +25,28 @@ export class UserController extends BaseController {
     public getUser = async (req: Request, res: Response) => {
         const sessData = req.user
 
+        
         if (sessData === undefined) {
             return res.send(new BaseResponse(false, "Session Data is invalid"))
         }
-
+        
         
         const steamDec = sessData['_json']['steamid']
+        const displayName: string = sessData['displayName']
+        const avatar: string = sessData['photos'][0]['value']
 
         if (steamDec === undefined) {
             return res.status(500).send(new BaseResponse(false, "Internal Error"))
         }
-
+        
         const steamHex = this.decToHex(steamDec)
 
         const user = await this._userService.getPlayer(steamHex);
 
+        const payload = { user: user, steam: { name: displayName, avatar: avatar } }
+
         if (user) {
-            return res.send(new BaseResponse(true, "Successfull fetch of user", user))
+            return res.send(new BaseResponse(true, "Successfull fetch of user", payload))
         }
 
         return res.status(203).send(new BaseResponse(false, "User does not exist in database"))
