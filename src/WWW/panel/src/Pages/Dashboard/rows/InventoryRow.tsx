@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../App/Store';
 
+import InventoryCard from '../../../Components/InventoryCard';
+
 import * as Style from '../style';
 
 
@@ -38,13 +40,5 @@ const InventoryRow = (): JSX.Element => {
         </motion.div>
     )
 }
-
-const InventoryCard = ({name}: {name?: string}): JSX.Element => (
-    <motion.div
-        className={Style.InventoryCard}
-    >
-        <h1>{name}</h1>
-    </motion.div>
-)
 
 export default InventoryRow
