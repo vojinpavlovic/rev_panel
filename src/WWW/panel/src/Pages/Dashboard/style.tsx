@@ -145,24 +145,3 @@ export const VehiclesRow = `
     mx-5
     my-5
 `
-
-export const VehicleCard = `
-    select-none
-    hover:cursor-default
-    my-5
-    bg-gradient-to-t
-    xl:bg-gradient-to-r
-    from-transparent
-    to-dark-transparent
-    rounded-md
-    py-5
-    w-full
-    h-auto
-    flex
-    flex-col
-    text-center
-    xl:flex-row 
-    xl:h-60
-    xl:text-left
-    items-center
-`
