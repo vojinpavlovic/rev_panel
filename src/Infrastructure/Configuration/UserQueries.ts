@@ -10,10 +10,9 @@ export default {
             users.pancir AS user_pancir,
             users.group AS user_group,
             users.vreme AS user_totalTime,
+            owned_vehicles.ime AS vehicle_name,
             owned_vehicles.plate AS vehicle_plate,
-            owned_vehicles.vehicle AS vehicle_specs, 
-            owned_vehicles.model AS vehicle_model,
-            owned_vehicles.job AS vehicle_job,
+            owned_vehicles.health AS vehicle_health,
             owned_vehicles.slika AS vehicle_img,
             jobs.label AS job_name,
             job_grades.label AS job_position

@@ -1,9 +1,6 @@
 import * as Style from './style'
 
-import UpdateLogCard from '../../Components/UpdateLogCard'
 import SmokeMotion from '../../Components/SmokeMotion'
-
-import { CardType } from '../../Types/UpdateLogTypes'
 
 import { motion} from "framer-motion";
 
@@ -14,6 +11,9 @@ import AvatarRow from './rows/AvatarRow'
 import CharacterRow from './rows/CharacterRow'
 import PlayerAccountsRow from './rows/PlayerAccountsRow';
 import UpdateLogRow from './rows/UpdateLogRow';
+import StatCardsRow from './rows/StatCardsRow';
+import InventoryRow from './rows/InventoryRow';
+import VehiclesRow from './rows/VehiclesRow';
 
 const Dashboard = () => {
     document.title = `${document.title} - Dashboard`
@@ -35,7 +35,7 @@ const LeftContentBody = () => {
             <div className={Style.LeftContentBody}>
                 <MenuRow/>
                 <TrailerRow/>
-                <PlayerRow/> 
+                <PlayerRow/>
                 <UpdateLogRow/>             
             </div>
         </>
@@ -49,6 +49,9 @@ const RightContentBody = () => {
             <CharacterRow/>
             <AvatarRow/>
             <PlayerAccountsRow/>
+            <StatCardsRow/>
+            <InventoryRow/>
+            <VehiclesRow/>
         </motion.div>
     )
 }
