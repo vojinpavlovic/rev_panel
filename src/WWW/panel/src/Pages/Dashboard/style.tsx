@@ -24,9 +24,7 @@ export const ContentBody = `
 export const LeftContentBody = `
     w-screen
     flex
-    flex-col
-    w-12/12
-    
+    flex-col    
     xl:w-5/12
     2xl:w-4/12
 `
@@ -132,23 +130,15 @@ export const StatCardsRow = `
 
 export const InventoryRow = `
     mx-5
+    w-full
 `
 
 export const InventoryWrapper = `
     w-full
     h-[30rem]
     overflow-auto
-`
-
-export const InventoryCard = `
-    float-left
-    w-24 
-    h-24
-    flex 
-    justify-center
-    items-center 
-    border-2
-    border-dark-line
+    flex
+    flex-wrap
 `
 
 export const VehiclesRow = `
@@ -160,13 +150,19 @@ export const VehicleCard = `
     select-none
     hover:cursor-default
     my-5
-    bg-gradient-to-r 
+    bg-gradient-to-t
+    xl:bg-gradient-to-r
     from-transparent
     to-dark-transparent
     rounded-md
     py-5
     w-full
-    h-60
+    h-auto
     flex
+    flex-col
+    text-center
+    xl:flex-row 
+    xl:h-60
+    xl:text-left
     items-center
 `
