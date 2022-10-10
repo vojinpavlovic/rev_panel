@@ -1,5 +1,4 @@
 export const Wrapper = `
-    overflow-x-hidden
     min-h-screen
     bg-dark
     bg-dashboard-bg
@@ -30,6 +29,7 @@ export const LeftContentBody = `
 `
 
 export const RightContentBody = `
+overflow-x-hidden
     relative
     flex
     flex-col
