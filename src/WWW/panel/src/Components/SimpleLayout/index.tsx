@@ -17,7 +17,7 @@ const style = `
 const SimpleLayout = ({children}: ChildrenProp): JSX.Element => {
     return (
         <motion.div animate={{opacity: [0, 1]}} className={style}>
-            <motion.button className='absolute left-5 top-5 flex justify-center items-center gap-5 opacity-70 hover:opacity-100 duration-300'>
+            <motion.button className='absolute left-5 top-5 flex justify-center items-center gap-3 text-xl opacity-70 hover:opacity-100 duration-300'>
                 <BackArrow/> Pocetna
             </motion.button>
             <SmokeMotion/>
