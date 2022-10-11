@@ -17,7 +17,7 @@ const InventoryRow = (): JSX.Element => {
         while (counter < 56) {
             if (inventory[counter]) {
                 const item = inventory[counter];
-                items.push(<InventoryCard key={`item-${item.name}-${counter}`} name={item.name}/>)
+                items.push(<InventoryCard key={`item-${item.name}-${counter}`} name={item.name} count={item.count}/>)
             } else {
                 items.push(<InventoryCard key={`item-empty-${counter}`}/>)
             }
@@ -30,7 +30,11 @@ const InventoryRow = (): JSX.Element => {
 
 
     return (
-        <motion.div className={Style.InventoryRow}>
+        <motion.div 
+            animate={{opacity: [0, 1]}}
+            transition={{delay: 1}}
+            className={Style.InventoryRow}
+        >
             <h1 className={Style.UpdateLogRowTitle}>📦 Inventar</h1>
             <motion.div
                 className={Style.InventoryWrapper}

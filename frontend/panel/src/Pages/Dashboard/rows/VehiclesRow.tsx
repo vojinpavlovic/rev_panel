@@ -22,6 +22,8 @@ const VehiclesRow = (): JSX.Element => {
 
     return (
         <motion.div
+            animate={{opacity: [0, 1]}}
+            transition={{delay: 1.2}}
             className={Style.VehiclesRow}
         >
             <h1 className={Style.UpdateLogRowTitle}>🚗 Automobili ({vehicles.length})</h1>

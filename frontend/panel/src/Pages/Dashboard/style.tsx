@@ -28,7 +28,7 @@ export const LeftContentBody = `
 `
 
 export const RightContentBody = `
-overflow-x-hidden
+    overflow-hidden
     relative
     flex
     flex-col
