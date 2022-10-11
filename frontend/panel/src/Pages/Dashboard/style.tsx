@@ -1,7 +1,6 @@
 export const Wrapper = `
     min-h-screen
     bg-dark
-    bg-dashboard-bg
     bg-center
     bg-fixed
     flex
