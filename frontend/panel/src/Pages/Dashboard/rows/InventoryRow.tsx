@@ -32,7 +32,7 @@ const InventoryRow = (): JSX.Element => {
     return (
         <motion.div 
             animate={{opacity: [0, 1]}}
-            transition={{delay: 1}}
+            transition={{delay: 0.8}}
             className={Style.InventoryRow}
         >
             <h1 className={Style.UpdateLogRowTitle}>📦 Inventar</h1>

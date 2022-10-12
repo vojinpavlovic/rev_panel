@@ -19,7 +19,8 @@ const Dashboard = () => {
     document.title = `${document.title} - Dashboard`
 
     return (
-        <motion.div animate={{opacity: [0, 1]}} className={Style.Wrapper}>
+        <motion.div  className={Style.Wrapper}>
+            <motion.div className='w-screen h-24 z-50 bg-gradient-to-t from-black fixed bottom-0'></motion.div>
             <div className={Style.ContentBody}>
                 <LeftContentBody/>
                 <RightContentBody/>

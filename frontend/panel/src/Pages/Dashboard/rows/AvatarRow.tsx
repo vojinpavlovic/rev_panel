@@ -7,7 +7,7 @@ const AvatarRow = (): JSX.Element => {
     return(
         <motion.div 
             animate={{opacity: [0, 1]}} 
-            transition={{delay: 0.5}}
+            transition={{delay: 0.3}}
             className={Style.AvatarRow}>
             <Avatar/>    
         </motion.div>

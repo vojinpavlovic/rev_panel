@@ -6,7 +6,7 @@ const PlayerAccountsRow = (): JSX.Element => {
     return(
         <motion.div
             animate={{opacity: [0, 1]}} 
-            transition={{delay: 1.2}}
+            transition={{delay: 0.4}}
         >
             <PlayerAccounts/>    
         </motion.div>    
