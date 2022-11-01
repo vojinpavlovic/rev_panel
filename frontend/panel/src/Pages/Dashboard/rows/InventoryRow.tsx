@@ -17,7 +17,12 @@ const InventoryRow = (): JSX.Element => {
         while (counter < 56) {
             if (inventory[counter]) {
                 const item = inventory[counter];
-                items.push(<InventoryCard key={`item-${item.name}-${counter}`} name={item.name}/>)
+                items.push(<InventoryCard 
+                    key={`item-${item.name}-${counter}`} 
+                    name={item.label ? item.label : item.name} 
+                    count={item.count} 
+                    img={`https://static.revolucija-roleplay.com/inventory/${item.name}.png`}
+                />)
             } else {
                 items.push(<InventoryCard key={`item-empty-${counter}`}/>)
             }
