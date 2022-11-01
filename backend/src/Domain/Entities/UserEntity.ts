@@ -32,7 +32,7 @@ class UserEntity {
         this.pancir = result[0].user_pancir ?? 0;
         this.group = result[0].user_group ?? "user";
         this.accounts = new AccountEntity(JSON.parse(result[0].user_accounts ?? "{}"));
-        this.inventory = result[0].user_inventory ? InventoryMapper(result[0].user_inventory) : [];
+        this.inventory = result[0].user_inventory ? InventoryMapper(result[0]) : [];
         this.vehicles = result[0].vehicle_plate ? VehiclesMapper(result) : [];
         this.job = new JobEntity(result[0].job_name ?? "", result[0].job_position ?? "")
         this.totalTime = MinToHour(result[0].user_totalTime ?? 0);

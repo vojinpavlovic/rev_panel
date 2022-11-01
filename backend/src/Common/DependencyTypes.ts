@@ -5,4 +5,5 @@ export default {
     IRedisService: "IRedisService",
     IMysqlService: "IMysqlService",
     IUserRepository: "IUserRepository",
+    ItemsCache: "ItemsCache",
 }

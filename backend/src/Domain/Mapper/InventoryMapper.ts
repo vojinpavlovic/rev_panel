@@ -5,16 +5,16 @@ export default (result: any): Array<InventoryItem> => {
         return [];
     } 
 
-    result = JSON.parse(result)
+    var inventory = JSON.parse(result.user_inventory)
 
-    if (result.length <= 0) {
+    if (inventory.length <= 0) {
         return [];
     }
 
     const inventoryList: Array<InventoryItem> = [];
 
-    for (const item of result) {
-        inventoryList.push(new InventoryItem(item));
+    for (const item of inventory) {
+        inventoryList.push(new InventoryItem([item, result.itemsCache]));
     }
 
     return inventoryList;

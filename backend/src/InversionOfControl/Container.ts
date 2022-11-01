@@ -16,6 +16,7 @@ import IUserRepository from '../Domain/Interfaces/IUserRepository';
 import UserRepository from '../Infrastructure/Repositories/UserRepository';
 
 import { UserController } from '../Web/Controllers/UserController';
+import ItemsCache from '../Infrastructure/Cache/ItemsCache';
 
 const container = new Container();
 
@@ -26,5 +27,7 @@ container.bind<IUserService>(DependencyTypes.IUserService).to(UserService)
 container.bind<IRedisService>(DependencyTypes.IRedisService).to(RedisService);
 container.bind<IMysqlService>(DependencyTypes.IMysqlService).to(MysqlService);
 container.bind<IUserRepository>(DependencyTypes.IUserRepository).to(UserRepository)
+
+container.bind<ItemsCache>(DependencyTypes.ItemsCache).to(ItemsCache);
 
 export default container;
