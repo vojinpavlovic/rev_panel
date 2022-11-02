@@ -12,6 +12,9 @@
     "noImplicitAny": false,
     "types": ["reflect-metadata", "jest", "node"],
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "node_modules/",
     "tests/"

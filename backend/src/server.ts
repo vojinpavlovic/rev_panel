@@ -4,7 +4,7 @@ config();
 
 import MysqlService from "./Infrastructure/Services/MysqlService";
 import RedisService from './Infrastructure/Services/RedisService';
-import { Http } from "./Web/http";
+import { Http } from "./Web/Http";
 
 new MysqlService().setup();
 new RedisService().setup();
