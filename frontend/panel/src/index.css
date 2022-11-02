@@ -6,18 +6,20 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 0;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f100; 
+  height: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15); 
+  background: rgba(221, 0, 0, 0.5); 
 }
 
 

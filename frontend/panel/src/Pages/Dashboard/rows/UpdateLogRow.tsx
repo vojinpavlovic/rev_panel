@@ -16,7 +16,7 @@ const UpdateLogRow = () => (
     <motion.div 
         className={Style.UpdateLogRow}
         animate={{ opacity: [0, 1] }}  
-        transition={{delay: 1}}>
+        transition={{delay: 0.2}}>
         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
         { 
             updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) 

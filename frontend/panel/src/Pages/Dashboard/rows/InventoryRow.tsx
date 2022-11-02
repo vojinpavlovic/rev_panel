@@ -35,7 +35,10 @@ const InventoryRow = (): JSX.Element => {
 
 
     return (
-        <motion.div className={Style.InventoryRow}>
+        <motion.div 
+            animate={{opacity: [0, 1]}}
+            transition={{delay: 0.8}}
+            className={Style.InventoryRow}>
             <h1 className={Style.UpdateLogRowTitle}>📦 Inventar</h1>
             <motion.div
                 className={Style.InventoryWrapper}

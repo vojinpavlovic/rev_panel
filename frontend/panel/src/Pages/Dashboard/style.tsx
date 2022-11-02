@@ -1,7 +1,6 @@
 export const Wrapper = `
     min-h-screen
     bg-dark
-    bg-dashboard-bg
     bg-center
     bg-fixed
     flex
@@ -26,6 +25,11 @@ export const LeftContentBody = `
     flex-col    
     xl:w-5/12
     2xl:w-4/12
+    xl:sticky
+    xl:top-0 
+    xl:h-screen
+    overflow-y-auto
+    z-50
 `
 
 export const RightContentBody = `
@@ -123,7 +127,7 @@ export const StatCardsRow = `
     gap-5
     mx-5 
     my-16 
-    xl:my-5
+    xl:my-10
     justify-center 
     xl:justify-start
 `

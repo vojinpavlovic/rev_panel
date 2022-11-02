@@ -10,7 +10,7 @@ const TrailerVideo = (): JSX.Element => {
     return (
         <motion.div 
             animate={{opacity: [0, 1]}} 
-            transition={{delay: 0.5}} 
+            transition={{delay: 0.2}} 
             className={Style.TrailerVideo}
         >
             {showTrailer && <ShowTrailer onClick={setShowTrailer}/>} 

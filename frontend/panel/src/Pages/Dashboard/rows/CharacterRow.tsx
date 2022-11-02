@@ -7,7 +7,7 @@ const CharacterRow = (): JSX.Element => {
     return(
         <motion.img
             animate={{opacity: [0, 1]}} 
-            transition={{delay: 1}}
+            transition={{ease: "easeIn",delay: 0.0}}
             className={`${Style.CharacterImage} z-[-2]`}
             src={CharacterImage}
         />
