@@ -44,12 +44,12 @@ export default class MysqlService implements IMysqlService{
     
         try {
             pool = createPool({
-                connectionLimit: 20,
-                host: '162.19.139.137',
-                port: 3306,
-                user: 'u32652_X7bfuysnqR',
-                password: 'pjX5d18wj8AI40QTdRo41Kmd',
-                database: 's32652_baza',
+                connectionLimit: parseInt(<string>process.env.MYSQL_CONN_LIMIT ?? 20),
+                host: process.env.MYSQL_HOST ?? "localhost",
+                port: parseInt(<string>process.env.MYSQL_PORT ?? 3306),
+                user: process.env.MYSQL_USER ?? "root",
+                password: process.env.MYSQL_PASSWD ?? "",
+                database: process.env.MYSQL_DB ?? "revolucija_sezonatri",
             })
     
             this.checkConn()
