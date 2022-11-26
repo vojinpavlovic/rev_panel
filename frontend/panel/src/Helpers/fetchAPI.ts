@@ -1,6 +1,5 @@
 import sleep from "../Utils/Sleep";
-
-const baseUrl: string = "http://sogolisica:3001/"
+import { BASE_URL } from "../Config/App";
 
 type ApiType = {
     endpoint: string;
@@ -11,7 +10,7 @@ type ApiType = {
 
 const fetchAPI = async({endpoint, method, credentials, body}: ApiType) => {
     const t1: number = new Date().getTime();
-    const response = await fetch(`${baseUrl}${endpoint}`, {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
         headers: {
             "Content-Type": "application/json"
         },

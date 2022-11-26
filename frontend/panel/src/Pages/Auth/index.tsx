@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import SimpleLayout from "../../Components/SimpleLayout";
 import SteamIcon from '../../Components/SVG/SteamIcon';
 import Logo from '../../Static/Images/big-logo.png';
+import { AUTH_URL } from '../../Config/App';
 
 const Auth = (): JSX.Element => {
     const openInNewTab = (url: string): void => {
@@ -25,7 +26,7 @@ const Auth = (): JSX.Element => {
                 animate={{y: [100, 0]}} 
                 className="border-2 border-red-600 flex gap-5 items-center justify-center py-3 px-6 my-10 rounded-2xl hover:bg-red-600"
                 whileHover={{scale: 1.1}}
-                onClick={() => openInNewTab('http://sogolisica:3001/api/auth/steam')}
+                onClick={() => openInNewTab(AUTH_URL)}
             >
                 <SteamIcon/> 
                 <p>
