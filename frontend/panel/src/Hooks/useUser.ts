@@ -7,7 +7,7 @@ import { UserState } from "../Types/UserState";
 
 
 const useUser = () => {
-    const { user, loading, steam } = useSelector((state: UserState) => state.user)
+    const { user, loading, steam, loggedIn } = useSelector((state: UserState) => state.user)
 
     const dispatch = useDispatch<AppDispatch>();
 
@@ -15,7 +15,7 @@ const useUser = () => {
         dispatch(getUser())
     }, [dispatch])
 
-    return { user, loading, steam }
+    return { user, loading, steam, loggedIn }
 }
 
 export default useUser;

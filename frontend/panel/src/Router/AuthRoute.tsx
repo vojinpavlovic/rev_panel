@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-const AuthRoute = ({user, redirectPath = '/panel', children}: any) => {
-    if (user) {
+const AuthRoute = ({loggedIn, redirectPath = '/panel', children}: any) => {
+    if (loggedIn) {
         return <Navigate to={redirectPath} replace/>
     }
 

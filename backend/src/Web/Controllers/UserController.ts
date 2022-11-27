@@ -49,6 +49,6 @@ export class UserController extends BaseController {
             return res.send(new BaseResponse(true, "Successfull fetch of user", payload))
         }
 
-        return res.status(203).send(new BaseResponse(false, "User does not exist in database"))
+        return res.status(203).send(new BaseResponse(true, "User does not exist in database"))
     }
 }   

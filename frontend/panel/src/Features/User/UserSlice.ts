@@ -7,7 +7,8 @@ const getUser = createAsyncThunk('users/fetchById', async () =>  await fetchAPI(
 const initialState: UserState = {
     user: null,
     steam: null,
-    loading: true
+    loading: true,
+    loggedIn: false
 }
 
 const userSlice = createSlice({
@@ -26,6 +27,11 @@ const userSlice = createSlice({
                 state.user = action.payload.data.user || null;
                 state.steam = action.payload.data.steam || null;
             }
+        
+            if (action.payload.status) {
+                state.loggedIn = true
+            }
+        
             state.loading = false;
         })
 
@@ -33,6 +39,7 @@ const userSlice = createSlice({
         builder.addCase(getUser.rejected, (state) => {
             state.user = null;
             state.loading = false;
+            state.loggedIn = false;
         })
     }
 })

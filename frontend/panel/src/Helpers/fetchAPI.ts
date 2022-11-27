@@ -10,7 +10,7 @@ type ApiType = {
 
 const fetchAPI = async({endpoint, method, credentials, body}: ApiType) => {
     const t1: number = new Date().getTime();
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+    const response = await fetch(`${BASE_URL}/${endpoint}`, {
         headers: {
             "Content-Type": "application/json"
         },
