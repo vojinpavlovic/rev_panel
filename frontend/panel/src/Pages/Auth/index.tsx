@@ -20,7 +20,7 @@ const Auth = (): JSX.Element => {
                 PRIJAVITE SE
             </motion.h1>
             <motion.h2 animate={{x: [100, 0]}} className="opacity-60 text-center">
-                Pratite informacije vaseg karaktera sada i na web-u
+                Pratite informacije Vašeg karaktera sada i na web-u
             </motion.h2>
             <motion.button
                 animate={{y: [100, 0]}} 
@@ -30,14 +30,14 @@ const Auth = (): JSX.Element => {
             >
                 <SteamIcon/> 
                 <p>
-                    Prijavi se putem Steam-a
+                    Prijavite se putem Steam-a
                 </p>
             </motion.button>
-            <motion.p animate={{opacity:[0, 0.6]}} transition={{delay: 1}} className="text-xs opacity-60 text-center">Ovaj sajt nije udruzen sa Valve corp.</motion.p>
+            <motion.p animate={{opacity:[0, 0.6]}} transition={{delay: 1}} className="text-xs opacity-60 text-center">Ovaj sajt nije udružen sa Valve corp.</motion.p>
             <motion.p animate={{opacity:[0, 0.6]}} transition={{delay: 1}} className="text-xs opacity-60 w-72 text-center my-5">
-                Prijavom putem Steam-a delite vas Steam 
-                identifikacioni broj sa Revolucija Roleplay 
-                kako bi smo Vas mogli identifikovati na serveru.
+                Prijavom putem Steam-a delite Vaš Steam 
+                identifikacioni broj sa Revolucija Roleplay-om
+                kako bismo Vas mogli identifikovati.
             </motion.p>
         </SimpleLayout>
     );
