@@ -40,6 +40,7 @@ const updatePlayersSide = async () => {
     const players = await getPlayers()
 
     if (players.status && players.data) {
+        console.log(players.data)
         for (const key of players.data) {
             const {name, ping} = players.data[key]
             $("#player-list").append(`
