@@ -15,25 +15,25 @@ const CLIPS = {
         title: "Nugata napao pet puta streamsniper"
     },
     "VOyk9fGTSRM": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Eurodrmex jedna noc na Revolucija RPu"
     },
     "QoXY1yNuqRc": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (1/6)"
     },
     "GKb7Jmct5V0": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (2/6)"
     },
     "NH1eMnEnGQk": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (3/6)"
     },
     "81zUtF8RkGc": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (4/6)"
     },
     "V9neSKt_9Dw": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (5/6)"
     },
     "tHG-UpFi3e8": {
-        title: "Eurodrmex noc na revoluciji"
+        title: "Povratak u proslost (6/6)"
     }
 }
 
