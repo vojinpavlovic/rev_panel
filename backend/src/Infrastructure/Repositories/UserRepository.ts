@@ -7,6 +7,8 @@ import IUserRepository from "../../Domain/Interfaces/IUserRepository";
 import UserQueries from "../Configuration/UserQueries";
 import ItemsCache from "../Cache/ItemsCache";
 
+import './ServerRepository'
+
 @injectable()
 class UserRepository implements IUserRepository {
     private readonly _mysqlService: IMysqlService;

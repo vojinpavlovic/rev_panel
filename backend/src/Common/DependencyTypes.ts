@@ -6,4 +6,6 @@ export default {
     IMysqlService: "IMysqlService",
     IUserRepository: "IUserRepository",
     ItemsCache: "ItemsCache",
+    IServerRepository: "IServerRepository",
+    ServerController: "ServerController"
 }
