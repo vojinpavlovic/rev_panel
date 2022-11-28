@@ -38,7 +38,7 @@ const updatePlayers = async () => {
 
 const updatePlayersSide = async () => {
     const players = await getPlayers()
-    $("#player-list").innerHTML = ""
+    $("#player-list").empty();
 
     if (players.status && players.data) {
         console.log(players.data)
