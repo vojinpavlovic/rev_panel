@@ -22,4 +22,6 @@ const updatePlayers = async () => {
     }
 }
 
-updatePlayers()
+setInterval(() => {
+    updatePlayers()
+}, 8000);
