@@ -1,5 +1,6 @@
 import { injectable } from "inversify";
 import DynamicEntity from "../../Domain/Entities/DynamicEntity";
+import PlayerEntity from "../../Domain/Entities/PlayerEntity";
 import IServerRepository from "../../Domain/Interfaces/IServerRepository"
 
 @injectable()
@@ -20,7 +21,8 @@ export default class ServerRepository implements IServerRepository {
 
         return await response;
     }
-    async getDynamic(): Promise<any> {
+
+    async getDynamic(): Promise<DynamicEntity | null> {
         const result = await this.fetchData('dynamic.json');
 
         if (!result) {
@@ -31,4 +33,25 @@ export default class ServerRepository implements IServerRepository {
 
         return dynamicEntity
     } 
+
+    async getPlayers(): Promise<any> {
+        const result: any = await this.fetchData('players.json');
+    
+        if (!result) {
+            return null;
+        }
+
+        if (result.length <= 0) {
+            return null
+        }
+
+
+        const players: PlayerEntity[] = []
+
+        for (const player of result) {
+            players.push(new PlayerEntity(player))
+        }
+
+        return players
+    }
 }

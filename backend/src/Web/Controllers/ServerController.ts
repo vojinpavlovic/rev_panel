@@ -24,4 +24,14 @@ export class ServerController {
 
         return res.send(new BaseResponse(true, "Server is online", result))
     }
+
+    public getPlayers = async (req: Request, res: Response) => {
+        const result = await this._serverRepository.getPlayers()
+    
+        if (!result) {
+            return res.send(new BaseResponse(false, "Server is probably offline or no players"))
+        }
+    
+        return res.send(new BaseResponse(true, "Server is online", result))
+    }
 }   
