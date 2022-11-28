@@ -1,4 +1,4 @@
-const DYNAMIC_JSON = "http://209.237.141.92:30120/dynamic.json"
+const DYNAMIC_JSON = "https://api.revolucija-roleplay.com/api/server/dynamic"
 
 const getPlayers = async () =>  await fetch(DYNAMIC_JSON, {
         method: "GET",
@@ -8,10 +8,8 @@ const getPlayers = async () =>  await fetch(DYNAMIC_JSON, {
             'Accept': 'application/json'
         }
     })
-    .then(res => res)
-    .then(data => console.log(data))
+    .then(res => res.json())
     .catch(err => {
-        console.log(err)
         return null
     })
 
