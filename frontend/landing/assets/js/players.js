@@ -55,5 +55,6 @@ const updatePlayersSide = async () => {
 updatePlayers()
 
 setInterval(() => {
-    updatePlayers()
+    updatePlayersSide();
+    updatePlayers();
 }, 8000);
