@@ -41,19 +41,15 @@ const updatePlayersSide = async () => {
 
     if (players.status && players.data) {
         console.log(players.data)
-        for (const key of players.data) {
-            const {name, ping} = players.data[key]
-            $("#player-list").append(`
-                <div class="item">
-                    <p>${name}</p>
-                    <span>${ping}</span>
-                </div>
-            `)
-        }
+        players.data.map((val, i) => {
+            const { name, ping } = val
+            $("#player-list").append(`<div class="item"><p>${name}</p><span>${ping}</span></div>`)
+        })
     }
 }
 
 updatePlayers()
+updatePlayersSide();
 
 setInterval(() => {
     updatePlayersSide();
