@@ -19,6 +19,7 @@ export default(app) => {
     app.get('/api/user', isAuth, userController.getUser);
     app.get('/api/auth/steam', notAuth, AuthMiddleware(), authController.login);
     app.get('/api/auth/steam/return', notAuth, AuthMiddleware(), authController.loginCallback);
-    app.get('/api/server/dynamic', serverController.getDynamic)
-    app.get('/api/server/players', serverController.getPlayers)
+    app.get('/api/auth/logout', authController.logout);
+    app.get('/api/server/dynamic', serverController.getDynamic);
+    app.get('/api/server/players', serverController.getPlayers);
 }

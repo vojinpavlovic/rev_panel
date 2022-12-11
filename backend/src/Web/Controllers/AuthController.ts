@@ -4,6 +4,7 @@ import { IUserService } from "../../Domain/Interfaces/IUserService";
 import { BaseController } from "../Base/BaseController";
 
 import DependencyTypes from "../../Common/DependencyTypes";
+import { BaseResponse } from "../Base/BaseResponse";
 
 @injectable()
 export class AuthController extends BaseController {
@@ -31,5 +32,10 @@ export class AuthController extends BaseController {
     */
     public loginCallback = async (req: Request | any, res: Response) => {
         res.redirect(process.env.STEAM_SUCCESSFULL_REDIRECT ?? "http://sogolisica:3001/panel")
+    }
+
+    public logout = async (req: Request, res: Response) => {
+        res.clearCookie("connect.sid")
+        res.send(new BaseResponse(true, "Successfull logout"))
     }
 }   
