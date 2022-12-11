@@ -120,6 +120,7 @@ export const CharacterImage = `
 `
 export const StatCardsRow = `
     w-12/12
+    relative
     xl:w-6/12
     2xl:w-5/12
     flex

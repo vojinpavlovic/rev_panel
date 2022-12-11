@@ -10,11 +10,12 @@ const StatCardsRow = (): JSX.Element => {
             transition={{delay: 0.2}} 
             className={Style.StatCardsRow}
         >
-            <StatCard val={23} desc="Ubistva" delay={0.4}/> 
-            <StatCard val={10} desc="Smrti" delay={1}/> 
-            <StatCard val={"600M"} desc="Potroseno" delay={1}/> 
-            <StatCard val={"20X"} desc="Pljackao" delay={1.4}/> 
-            <StatCard val={"40X"} desc="Zatvoren" delay={1.4}/> 
+            <p className=' bg-dark-brown p-2 z-50 rounded-md shadow-xl'>Statistika ce se azurirati prvi put 15.12.2022</p>
+            <StatCard val={0} desc="Ubistva" delay={0.4}/> 
+            <StatCard val={0} desc="Smrti" delay={1}/> 
+            <StatCard val={""} desc="Potroseno" delay={1}/> 
+            <StatCard val={""} desc="Pljackao" delay={1.4}/> 
+            <StatCard val={""} desc="Zatvoren" delay={1.4}/> 
         </motion.div>
     )
 }
