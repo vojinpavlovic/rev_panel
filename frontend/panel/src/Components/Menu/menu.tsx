@@ -18,23 +18,20 @@ const MenuFull = ({onClick, show}: {onClick: Dispatch<SetStateAction<Boolean>>, 
         <motion.div 
             layout
             className={Style.Menu} 
-            style={{ height: show ? "100vh" : "0" }}
+            
         >
                 <motion.div animate={{opacity: [0, 1]}} className={Style.MenuContent}>
                     {show && <HamburgerButton onClick={() => onClick(true)} show={show}/>}
-                    <button className="absolute right-5 top-5 opacity-100 text-red-300 hover:opacity-100 hover:text-white duration-300 rounded-md text-2xl py-3 px-5">
-                        Odjavi se
-                    </button>
+                    <button>Odjavi se</button>
                 </motion.div>
                 <motion.ul 
                     transition={{delay: 0.2}}
                     animate={{opacity:[0, 1]}}
-                    className="flex flex-col justify-center items-center h-screen mx-10 gap-10 text-7xl font-bold -translate-y-10"
+                    className="flex gap-10 w-fit p-5 rounded-md bg-white text-black"
                 >
                     <MenuItem text="Pocenta"/>
-                    <MenuItem text="Dashboard"/>
                     <MenuItem text="Prodavnica"/>
-                    <MenuItem text="FAQ"/>
+                    <MenuItem text="Odjavi se"/>
                 </motion.ul>
         </motion.div>
     )

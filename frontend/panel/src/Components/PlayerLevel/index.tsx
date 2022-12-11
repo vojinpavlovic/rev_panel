@@ -15,8 +15,8 @@ const PlayerLevel = (): JSX.Element => {
     return (
         <Motion.Wrapper>
             <>
-            {fill > 0 && <Motion.XP><XP current={level.xp} needed={level.needXP}/></Motion.XP>}
-            {fill > 0 && <Motion.Level><Level current={level.level}/></Motion.Level>}
+            {fill >= 0 && <Motion.XP><XP current={level.xp} needed={level.needXP}/></Motion.XP>}
+            {fill >= 0 && <Motion.Level><Level current={level.level}/></Motion.Level>}
             <div className={Style.Line}></div>
             <Motion.FillLine fill={fill}/>
             {fill > 0 && <Motion.Icon fill={fill - 1}/>}

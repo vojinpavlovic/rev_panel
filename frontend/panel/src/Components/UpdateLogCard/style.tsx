@@ -3,6 +3,7 @@ export const Card = `
     my-5
     p-5
     w-12/12
+    h-24
     bg-dark-transparent
     flex
     items-center

@@ -32,7 +32,7 @@ const ShowTrailer = ({onClick}: {onClick: Dispatch<SetStateAction<Boolean>>}): J
                     className='rounded-md'
                     width="853"
                     height="480"
-                    src={`https://www.youtube.com/embed/${"55azFSJHkWI"}`}
+                    src={`https://www.youtube.com/embed/${"iCpta-l8fCA"}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

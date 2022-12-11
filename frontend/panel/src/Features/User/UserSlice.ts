@@ -14,7 +14,14 @@ const initialState: UserState = {
 const userSlice = createSlice({
     name: "user",
     initialState,
-    reducers: {},
+    reducers: {
+        deleteUser: (state, action) => {
+            state.user = null;
+            state.loggedIn = false;
+            state.steam = null;
+            state.loading = true
+        }
+    },
     extraReducers: (builder) => {
         // On Fetching
         builder.addCase(getUser.pending, (state) => {

@@ -3,6 +3,7 @@
  */
 
 import { useState } from 'react';
+import Navbar from '../Nav';
 
 import HamburgerButton from './hamburger-btn';
 import MenuFull from './menu';
@@ -16,8 +17,8 @@ const Menu = (): JSX.Element => {
 
     return (
         <>
-            {!show && <HamburgerButton onClick={reveal} show={show}/>} 
-            <MenuFull onClick={reveal} show={show}/>
+            <HamburgerButton onClick={reveal} show={show}/>
+            <Navbar show={show}/>
         </>
     )
 }

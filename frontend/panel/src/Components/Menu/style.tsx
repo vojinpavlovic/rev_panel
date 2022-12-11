@@ -17,20 +17,20 @@ export const HamburgerButtonSpan = `
 `
 
 export const HamburgerButtonSpanWide = "w-8"
-export const HamburgerButtonSpanNormal = "w-6"
+export const HamburgerButtonSpanNormal = "w-8"
 
 export const Menu = `
-    backdrop-blur-3xl
-    bg-gradient-to-r 
-    to-dark-transparent
-    from-accounts-from-rgba 
-    w-full
+    rounded-md
+    w-8/12
+    flex
+    flex-col
+    h-40
     fixed
-    left-0
-    top-0 
     z-40
 `
 
 export const MenuContent = `
-    p-10
+    py-5
+    justify-items-stretch
+    flex
 `

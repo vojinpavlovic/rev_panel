@@ -7,9 +7,7 @@ import UpdateLogCard from "../../../Components/UpdateLogCard";
 import { CardType } from "../../../Types/UpdateLogTypes";
 
 const updateLogData: Array<CardType> = [
-    {date: new Date(), title: "Dodani novi automobili u auto salonu..."},
-    {date: new Date(), title: "Popravljen Carry sistem i ispadanje iz automobila..."},
-    {date: new Date(), title: "Popravljeni sitni bugovi i optimizacija..."}
+    {date: new Date(), title: "Sezona 3 Beta Remastered"},
 ]
 
 const UpdateLogRow = () => (
@@ -20,6 +18,9 @@ const UpdateLogRow = () => (
         <h1 className={Style.UpdateLogRowTitle}>📜 Update Log</h1>
         { 
             updateLogData.map(x => <UpdateLogCard key={`${x.date}/${x.title}`} date={x.date} title={x.title}/>) 
+        }
+        {
+            updateLogData.length <= 3 && <p className="text-xs opacity-60 text-center">Nema vise logova</p>
         }
     </motion.div>   
 )

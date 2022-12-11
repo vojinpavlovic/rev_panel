@@ -16,7 +16,7 @@ import InventoryRow from './rows/InventoryRow';
 import VehiclesRow from './rows/VehiclesRow';
 
 const Dashboard = () => {
-    document.title = `${document.title} - Dashboard`
+    document.title = `${document.title} - Panel`
 
     return (
         <motion.div className={Style.Wrapper}>
